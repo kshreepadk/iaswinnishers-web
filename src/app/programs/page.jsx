@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "UPSC Coaching Programs",
   description:
-    "Explore IAS Winnishers' UPSC coaching programs — the IMP MBA Program, Prelims Mastery, Mains Mastery, Geography/Economy/Current Affairs Made Easy, and Interview Guidance, each with a dedicated personal coach.",
+    "Explore IAS Winnishers' UPSC coaching programs — the Foundation to Winning Finish Program, Prelims Mastery, Mains Mastery, Geography/Economy/Current Affairs Made Easy, and Interview Guidance, each with a dedicated personal coach.",
   alternates: { canonical: "/programs" },
 };
 
@@ -46,18 +46,18 @@ export default function ProgramsPage() {
       />
 
       <ProgramSection
-        id="imp-mba"
+        id="foundation-to-finish"
         reverse
         bg="bg-white"
         eyebrow="Complete Journey · 18–22 Months"
-        title="IMP MBA Program"
+        title="Foundation to Winning Finish Program"
         description={
           <>
-            IMP MBA stands for <strong>Interview, Mains, Prelims — Mission
-            Building and Accomplishment</strong>. It&apos;s our most complete
-            program: an 18–22 month journey that walks with you through every
-            single stage of the exam, from your first NCERT to your final
-            interview.
+            It&apos;s our most complete offering, and the name says exactly
+            what it is: an 18–22 month journey that walks with you from your
+            <strong> first NCERT to your final interview</strong> — Prelims,
+            Mains and Interview, all in one continuous program with one coach
+            throughout.
           </>
         }
         bullets={[
@@ -95,7 +95,7 @@ export default function ProgramsPage() {
             <h3 className="mb-1.5 font-display text-base font-semibold">Format</h3>
             <p className="mb-4 text-sm text-ink-2">Full-length + sectional tests with instant scoring and topic-wise error analysis.</p>
             <h3 className="mb-1.5 font-display text-base font-semibold">Best paired with</h3>
-            <p className="text-sm text-ink-2">IMP MBA Program, or standalone for revision-stage aspirants.</p>
+            <p className="text-sm text-ink-2">Foundation to Winning Finish Program, or standalone for revision-stage aspirants.</p>
           </>
         }
       />

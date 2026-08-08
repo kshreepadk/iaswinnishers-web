@@ -41,7 +41,7 @@ export default function Footer() {
               Programs
             </h4>
             <ul className="flex flex-col gap-3 text-[14.5px]">
-              <li><Link href="/programs#imp-mba" className="hover:text-marigold">IMP MBA Program</Link></li>
+              <li><Link href="/programs#foundation-to-finish" className="hover:text-marigold">Foundation to Winning Finish Program</Link></li>
               <li><Link href="/programs#prelims-mastery" className="hover:text-marigold">Prelims Mastery Program</Link></li>
               <li><Link href="/programs#mains-mastery" className="hover:text-marigold">Mains Mastery Program</Link></li>
               <li><Link href="/programs#geography" className="hover:text-marigold">Geography Made Easy</Link></li>

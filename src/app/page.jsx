@@ -29,7 +29,7 @@ const JOURNEY = [
 ];
 
 const PROGRAMS = [
-  { tag: "18–22 Months", title: "IMP MBA Program", body: "Interview, Mains, Prelims — Mission Building and Accomplishment. One complete journey from day one to interview day.", href: "/programs#imp-mba" },
+  { tag: "18–22 Months", title: "Foundation to Winning Finish Program", body: "One continuous journey, from your first NCERT to your final interview — the same coach with you at every single stage.", href: "/programs#foundation-to-finish" },
   { tag: "Objective Round", title: "Prelims Mastery Program", body: "Timed, full-length mock tests on the real exam pattern, with detailed error analysis after every attempt.", href: "/programs#prelims-mastery" },
   { tag: "Descriptive Round", title: "Mains Mastery Program", body: "Weekly answer writing across all GS papers, Essay, and your optional subject — Geography, Polity and Psychology especially well covered.", href: "/programs#mains-mastery" },
   { tag: "Personality Test", title: "Interview Guidance", body: "One-on-one DAF review, personality-test preparation, and steady confidence coaching before the big day.", href: "/programs#interview" },
@@ -44,7 +44,7 @@ const RESOURCES = [
 const TESTIMONIALS = [
   { initials: "AS", name: "Akash S.", program: "Interview Guidance", quote: "My coach helped me build real clarity before the interview — patient, structured conversations that made me feel prepared instead of anxious on the actual day." },
   { initials: "SE", name: "Shiva E.", program: "Mains Test Series", quote: "Weekly tests with detailed, honest feedback made all the difference. Preparing here felt systematic rather than scattered across ten different sources." },
-  { initials: "SN", name: "Sandesh N.", program: "IMP MBA Program", quote: "My coach kept me engaged with exam-oriented questions even outside class hours — lively, energetic teaching that never let my momentum drop." },
+  { initials: "SN", name: "Sandesh N.", program: "Foundation to Winning Finish Program", quote: "My coach kept me engaged with exam-oriented questions even outside class hours — lively, energetic teaching that never let my momentum drop." },
 ];
 
 export default function HomePage() {

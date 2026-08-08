@@ -81,7 +81,7 @@ export default function AboutPage() {
             </ul>
 
             <h2>Our approach to each stage</h2>
-            <h3>IMP MBA Program</h3>
+            <h3>Foundation to Winning Finish Program</h3>
             <p>NCERT-based concept building and a syllabus map tailored to how much time you actually have — carried through every stage in one continuous journey.</p>
             <h3>Prelims</h3>
             <p>Timed test series that mirror the real exam, followed by error analysis that tells you exactly what to fix.</p>
