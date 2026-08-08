@@ -1,6 +1,8 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import LeadForm from "@/components/LeadForm";
+import VideoEmbed from "@/components/VideoEmbed";
+import { getLatestVideos, YOUTUBE_CHANNEL_URL } from "@/lib/youtube";
 
 export const metadata = {
   title: "Free UPSC Resources | NCERT Booklist, PYQs & Syllabus Map",
@@ -27,7 +29,9 @@ const RESOURCES = [
   },
 ];
 
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
+  const videos = await getLatestVideos(3);
+
   return (
     <>
       <PageHero
@@ -53,6 +57,36 @@ export default function ResourcesPage() {
           ))}
         </div>
       </section>
+
+      {videos.length > 0 && (
+        <section className="bg-paper-2 px-6 py-16">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="mx-auto max-w-[680px] text-center">
+              <span className="eyebrow justify-center">Watch &amp; Learn</span>
+              <h2 className="mt-3.5 font-display text-2xl font-semibold md:text-[30px]">
+                Watch before you decide anything
+              </h2>
+              <p className="mt-3.5 text-ink-2">
+                A few recent classes from our YouTube channel — the same
+                teaching style you&apos;d get as a coached aspirant here.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {videos.map((v) => (
+                <div key={v.videoId} className="flex flex-col gap-3">
+                  <VideoEmbed videoId={v.videoId} title={v.title} />
+                  <h3 className="font-display text-[15px] font-semibold leading-snug">{v.title}</h3>
+                </div>
+              ))}
+            </div>
+            <div className="mt-9 text-center">
+              <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+                Subscribe on YouTube
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-ink px-6 py-16">
         <div className="mx-auto max-w-[720px] text-center">
