@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Confetti from "@/components/Confetti";
 
 export default function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [errorMessage, setErrorMessage] = useState("");
+  const [celebrate, setCelebrate] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -37,6 +39,7 @@ export default function ContactForm() {
       }
 
       setStatus("success");
+      setCelebrate(true);
       form.reset();
     } catch {
       setErrorMessage("Couldn't reach the server. Check your connection and try again.");
@@ -47,6 +50,7 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-md2 border border-leaf-light bg-leaf-light p-6 text-center">
+        <Confetti fire={celebrate} onDone={() => setCelebrate(false)} />
         <p className="font-display text-lg font-semibold text-ink">Thanks — you&apos;re booked in!</p>
         <p className="mt-2 text-sm text-ink-2">
           A coach will reach out shortly to confirm a time for your call.

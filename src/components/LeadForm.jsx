@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Confetti from "@/components/Confetti";
 
 export default function LeadForm({ buttonLabel = "Get it now", source = "unknown", downloadUrl }) {
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [message, setMessage] = useState("");
+  const [celebrate, setCelebrate] = useState(false);
   const downloadLinkRef = useRef(null);
 
   async function handleSubmit(e) {
@@ -35,6 +37,7 @@ export default function LeadForm({ buttonLabel = "Get it now", source = "unknown
       }
 
       setStatus("success");
+      setCelebrate(true);
       form.reset();
 
       // Auto-trigger the download the moment the lead is saved, so there's
@@ -52,13 +55,15 @@ export default function LeadForm({ buttonLabel = "Get it now", source = "unknown
   if (status === "success") {
     if (!downloadUrl) {
       return (
-        <p className="mt-1 text-sm font-semibold text-leaf">
-          Thanks — you&apos;re on the list!
-        </p>
+        <div className="mt-1">
+          <Confetti fire={celebrate} onDone={() => setCelebrate(false)} />
+          <p className="text-sm font-semibold text-leaf">Thanks — you&apos;re on the list!</p>
+        </div>
       );
     }
     return (
       <div className="mt-1">
+        <Confetti fire={celebrate} onDone={() => setCelebrate(false)} />
         <p className="mb-2 text-sm font-semibold text-leaf">Your download should start automatically.</p>
         <a
           ref={downloadLinkRef}

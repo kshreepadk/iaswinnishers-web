@@ -18,6 +18,17 @@ html {
   display: none;
 }
 
+@keyframes confetti-fall {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--drift), 60vh) rotate(var(--rotate));
+    opacity: 0;
+  }
+}
+
 body {
   background-color: #FBF3E6;
   color: #26180F;

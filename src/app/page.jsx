@@ -1,4 +1,8 @@
 import Link from "next/link";
+import HeroStaircase from "@/components/HeroStaircase";
+import ProgramFinder from "@/components/ProgramFinder";
+import CountUp from "@/components/CountUp";
+import MobileCarousel from "@/components/MobileCarousel";
 
 export const metadata = {
   title: "Personalised UPSC & IAS Coaching with a Dedicated Coach for Every Aspirant",
@@ -71,24 +75,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Simple staircase illustration, rebuilt as SVG with Tailwind-controlled sizing */}
-          <div className="mx-auto w-full max-w-[520px]">
-            <svg viewBox="0 0 480 380" className="w-full" role="img" aria-label="Four rising steps — Foundation, Prelims, Mains, Interview — leading to a flag at the winning finish">
-              <line x1="20" y1="330" x2="460" y2="330" stroke="#E7D9C3" strokeWidth="2" />
-              <rect x="40" y="270" width="80" height="60" rx="10" fill="#FFB627" fillOpacity="0.35" />
-              <text x="80" y="358" fontFamily="Inter, sans-serif" fontSize="14" fontWeight="700" fill="#26180F" textAnchor="middle">Foundation</text>
-              <rect x="160" y="220" width="80" height="110" rx="10" fill="#FFB627" fillOpacity="0.65" />
-              <text x="200" y="358" fontFamily="Inter, sans-serif" fontSize="14" fontWeight="700" fill="#26180F" textAnchor="middle">Prelims</text>
-              <rect x="280" y="150" width="80" height="180" rx="10" fill="#FFB627" />
-              <text x="320" y="358" fontFamily="Inter, sans-serif" fontSize="14" fontWeight="700" fill="#26180F" textAnchor="middle">Mains</text>
-              <rect x="400" y="70" width="80" height="260" rx="10" fill="#FF5A36" />
-              <text x="440" y="358" fontFamily="Inter, sans-serif" fontSize="14" fontWeight="700" fill="#26180F" textAnchor="middle">Interview</text>
-              <g transform="translate(440,70)">
-                <rect x="-2" y="-52" width="4" height="52" fill="#26180F" />
-                <path d="M2 -50 L38 -40 L2 -30 Z" fill="#26180F" />
-              </g>
-            </svg>
-          </div>
+          {/* Animated staircase illustration — steps rise into place on load */}
+          <HeroStaircase />
         </div>
       </section>
 
@@ -107,18 +95,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ProgramFinder />
+
       {/* STAT STRIP */}
       <section className="border-y border-line px-6 py-10">
         <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 text-center md:grid-cols-4">
           {[
-            ["1:1", "Coach-to-student pairing, for every aspirant"],
-            ["5", "Stages covered — Foundation to Winning Finish"],
-            ["Weekly", "One-on-one review sessions with your coach"],
-            ["100%", "Personalised study plans — no fixed template"],
-          ].map(([num, label]) => (
-            <div key={label}>
-              <div className="font-display text-3xl font-bold text-ink md:text-[34px]">{num}</div>
-              <div className="mt-1 text-[13px] text-ink-2">{label}</div>
+            { display: "1:1", label: "Coach-to-student pairing, for every aspirant" },
+            { end: 5, label: "Stages covered — Foundation to Winning Finish" },
+            { display: "Weekly", label: "One-on-one review sessions with your coach" },
+            { end: 100, suffix: "%", label: "Personalised study plans — no fixed template" },
+          ].map((s) => (
+            <div key={s.label}>
+              <div className="font-display text-3xl font-bold text-ink md:text-[34px]">
+                {s.end !== undefined ? <CountUp end={s.end} suffix={s.suffix || ""} /> : s.display}
+              </div>
+              <div className="mt-1 text-[13px] text-ink-2">{s.label}</div>
             </div>
           ))}
         </div>
@@ -202,9 +194,29 @@ export default function HomePage() {
               Choose the stage you're starting from
             </h2>
           </div>
-          <div className="no-scrollbar mt-10 -mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 md:grid-cols-4">
+          <MobileCarousel
+            hiddenAbove="sm"
+            className="mt-10"
+            itemWidthClass="w-[80%]"
+            items={PROGRAMS.map((p) => (
+              <div key={p.title} className="flex h-full flex-col rounded-md2 border border-line bg-white">
+                <div className="p-6 pb-0">
+                  <span className="mb-3 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase tracking-wide text-leaf">
+                    {p.tag}
+                  </span>
+                  <h3 className="mb-2 font-display text-[19px] font-semibold">{p.title}</h3>
+                </div>
+                <p className="px-6 text-sm text-ink-2">{p.body}</p>
+                <div className="mt-auto flex items-center justify-end border-t border-line p-6">
+                  <Link href={p.href} className="btn btn-ghost !px-4 !py-2.5 text-sm">Details</Link>
+                </div>
+              </div>
+            ))}
+          />
+
+          <div className="mt-10 hidden gap-5 sm:grid sm:grid-cols-2 md:grid-cols-4">
             {PROGRAMS.map((p) => (
-              <div key={p.title} className="flex min-w-[78%] shrink-0 snap-center flex-col rounded-md2 border border-line bg-white transition-all hover:-translate-y-1.5 hover:shadow-soft sm:min-w-0 sm:shrink sm:snap-none">
+              <div key={p.title} className="flex flex-col rounded-md2 border border-line bg-white transition-all hover:-translate-y-1.5 hover:shadow-soft">
                 <div className="p-6 pb-0">
                   <span className="mb-3 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase tracking-wide text-leaf">
                     {p.tag}
@@ -218,7 +230,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className="mt-3 text-center text-xs text-ink-2 sm:hidden">Swipe to see more →</p>
+
           <div className="mt-10 text-center">
             <Link href="/programs" className="btn btn-primary">View All Programs</Link>
           </div>
@@ -266,9 +278,30 @@ export default function HomePage() {
               Aspirants who found their steady footing here
             </h2>
           </div>
-          <div className="no-scrollbar mt-12 -mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
+          <MobileCarousel
+            hiddenAbove="md"
+            className="mt-12"
+            itemWidthClass="w-[84%]"
+            items={TESTIMONIALS.map((t) => (
+              <div key={t.name} className="h-full rounded-md2 border border-line bg-white p-7">
+                <div className="mb-3.5 text-marigold">★★★★★</div>
+                <p className="text-[15px] text-ink-2">{t.quote}</p>
+                <div className="mt-5 flex items-center gap-3">
+                  <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-marigold font-display font-bold text-ink">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <strong className="block text-sm text-ink">{t.name}</strong>
+                    <span className="text-xs text-ink-2/70">{t.program}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          />
+
+          <div className="mt-12 hidden gap-6 md:grid md:grid-cols-3">
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="min-w-[82%] shrink-0 snap-center rounded-md2 border border-line bg-white p-7 md:min-w-0 md:shrink md:snap-none">
+              <div key={t.name} className="rounded-md2 border border-line bg-white p-7">
                 <div className="mb-3.5 text-marigold">★★★★★</div>
                 <p className="text-[15px] text-ink-2">{t.quote}</p>
                 <div className="mt-5 flex items-center gap-3">
@@ -283,7 +316,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className="mt-3 text-center text-xs text-ink-2 md:hidden">Swipe to see more →</p>
         </div>
       </section>
 
