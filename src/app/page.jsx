@@ -21,10 +21,10 @@ const FEATURES = [
 ];
 
 const JOURNEY = [
-  { n: "1", title: "Foundation", body: "NCERT base-building, syllabus mapping and a personalised coaching plan and expansion of horizons of your knowledge so that you become that well informed and educated person that UPSC aspires to recruit." },
+  { n: "1", title: "Foundation Mastery", body: "NCERT base-building, syllabus mapping and a personalised coaching plan and expansion of horizons of your knowledge so that you become that well informed and educated person that UPSC aspires to recruit." },
   { n: "2", title: "Prelims Mastery", body: "Conceptual excellence, current affairs mastery and weekly tests which we proudly call individual excellence challenge." },
-  { n: "3", title: "Mains", body: "Daily answer writing for general studies, optional subject depth, and essay practice — all with detailed review session." },
-  { n: "4", title: "Interview", body: "Comprehensive one-on-one DAF review, confidence-building conversations, and high performance coaching." },
+  { n: "3", title: "Mains Mastery", body: "Daily answer writing for general studies, optional subject depth, and essay practice — all with detailed review session." },
+  { n: "4", title: "Interview Mastery", body: "Comprehensive one-on-one DAF review, confidence-building conversations, and high performance coaching." },
   { n: "🏁", title: "Winning Finish", body: "You walk in prepared and reassured of yourself and experience its natural consequence — success in the civil service exam." },
 ];
 
@@ -133,8 +133,9 @@ export default function HomePage() {
               Coaching built around one student, not one classroom
             </h2>
             <p className="mt-4 text-[16.5px] text-ink-2">
-              Most institutes teach a batch. We coach a person — your pace, your
-              weak areas, your syllabus gaps, your interview nerves.
+              The philosophical basis of our coaching stems from the fact that
+              every student is unique, his/her needs and requirements are
+              individualistic.
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3">

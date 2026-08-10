@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
-export default function LeadForm({ buttonLabel = "Send it to me", source = "unknown" }) {
-  const [status, setStatus] = useState("idle"); // idle | loading | success | warning | error
+export default function LeadForm({ buttonLabel = "Get it now", source = "unknown", downloadUrl }) {
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [message, setMessage] = useState("");
+  const downloadLinkRef = useRef(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -33,13 +34,15 @@ export default function LeadForm({ buttonLabel = "Send it to me", source = "unkn
         return;
       }
 
-      if (data.warning) {
-        setMessage(data.warning);
-        setStatus("warning");
-      } else {
-        setStatus("success");
-      }
+      setStatus("success");
       form.reset();
+
+      // Auto-trigger the download the moment the lead is saved, so there's
+      // no extra click needed — the visible button below is a fallback in
+      // case the browser blocks the automatic click.
+      if (downloadUrl) {
+        setTimeout(() => downloadLinkRef.current?.click(), 150);
+      }
     } catch {
       setMessage("Couldn't reach the server. Try again in a moment.");
       setStatus("error");
@@ -47,15 +50,26 @@ export default function LeadForm({ buttonLabel = "Send it to me", source = "unkn
   }
 
   if (status === "success") {
+    if (!downloadUrl) {
+      return (
+        <p className="mt-1 text-sm font-semibold text-leaf">
+          Thanks — you&apos;re on the list!
+        </p>
+      );
+    }
     return (
-      <p className="mt-1 text-sm font-semibold text-leaf">
-        Sent! Check your inbox in the next few minutes (and your spam folder, just in case).
-      </p>
+      <div className="mt-1">
+        <p className="mb-2 text-sm font-semibold text-leaf">Your download should start automatically.</p>
+        <a
+          ref={downloadLinkRef}
+          href={downloadUrl}
+          download
+          className="btn btn-primary w-full !py-2.5 text-sm"
+        >
+          Didn&apos;t start? Click to download
+        </a>
+      </div>
     );
-  }
-
-  if (status === "warning") {
-    return <p className="mt-1 text-sm font-semibold text-marigold-dark">{message}</p>;
   }
 
   return (
@@ -72,7 +86,7 @@ export default function LeadForm({ buttonLabel = "Send it to me", source = "unkn
       <input type="email" name="email" placeholder="Email address" required className="field-input flex-1 !rounded-full" />
       {status === "error" && <p className="w-full text-sm font-semibold text-coral-dark">{message}</p>}
       <button type="submit" disabled={status === "loading"} className="btn btn-primary w-full !py-2.5 text-sm disabled:opacity-60">
-        {status === "loading" ? "Sending…" : buttonLabel}
+        {status === "loading" ? "Preparing…" : buttonLabel}
       </button>
     </form>
   );

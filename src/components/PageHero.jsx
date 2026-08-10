@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function PageHero({ crumb, eyebrow, title, description, center = false }) {
   return (
-    <section className={`border-b border-line px-6 py-14 ${center ? "text-center" : ""}`}>
+    <section className={`border-b border-line px-6 pb-10 pt-7 ${center ? "text-center" : ""}`}>
       <div className={`mx-auto max-w-[1200px] ${center ? "max-w-[640px]" : ""}`}>
         {crumb && (
           <div className="mb-3.5 text-[13.5px] text-ink-2">

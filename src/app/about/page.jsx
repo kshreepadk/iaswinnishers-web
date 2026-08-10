@@ -83,11 +83,11 @@ export default function AboutPage() {
             <h2>Our approach to each stage</h2>
             <h3>Foundation to Winning Finish Program</h3>
             <p>NCERT-based concept building and a syllabus map tailored to how much time you actually have — carried through every stage in one continuous journey.</p>
-            <h3>Prelims</h3>
+            <h3>Prelims Mastery</h3>
             <p>Timed test series that mirror the real exam, followed by error analysis that tells you exactly what to fix.</p>
-            <h3>Mains</h3>
+            <h3>Mains Mastery</h3>
             <p>Weekly answer writing across all GS papers and your optional subject (Geography, Polity and Psychology are especially well covered), plus essay practice reviewed line by line by your coach.</p>
-            <h3>Interview</h3>
+            <h3>Interview Mastery</h3>
             <p>One-on-one DAF review and steady, honest conversations that build real confidence for the personality test.</p>
           </article>
 

@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -35,15 +36,16 @@ function Block({ block }) {
   return <p>{block.text}</p>;
 }
 
-export default function BlogPostPage({ params }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) notFound();
 
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
     <>
-      <section className="border-b border-line px-6 py-14">
+      <section className="border-b border-line px-6 pb-10 pt-7">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-3.5 text-[13.5px] text-ink-2">
             <Link href="/" className="hover:text-coral">Home</Link> / <Link href="/blog" className="hover:text-coral">Blog</Link> / {post.category}

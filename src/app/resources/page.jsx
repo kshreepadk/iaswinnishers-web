@@ -16,16 +16,19 @@ const RESOURCES = [
     slug: "ncert-booklist",
     title: "NCERT Booklist, Prioritized",
     body: "The exact NCERTs to read, and the order to read them in, for every GS subject — no more guessing where to start.",
+    file: "/resources/ncert-booklist.pdf",
   },
   {
     slug: "study-planner",
     title: "The 12-Month Study Planner",
     body: "A fillable template built around three real phases, not twelve identical months — pairs with our blog post on building a plan that survives contact with reality.",
+    file: "/resources/study-planner.pdf",
   },
   {
     slug: "syllabus-map",
     title: "One-Page UPSC Syllabus Map",
     body: "The entire GS syllabus laid out visually on a single page you can keep in front of you.",
+    file: "/resources/syllabus-map.pdf",
   },
 ];
 
@@ -52,7 +55,7 @@ export default async function ResourcesPage() {
               </div>
               <h3 className="font-display text-lg font-semibold">{r.title}</h3>
               <p className="flex-1 text-sm text-ink-2">{r.body}</p>
-              <LeadForm source={`resources-${r.slug}`} />
+              <LeadForm source={`resources-${r.slug}`} downloadUrl={r.file} buttonLabel="Get it now" />
             </div>
           ))}
         </div>
