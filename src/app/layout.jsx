@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CounsellingPopup from "@/components/CounsellingPopup";
 
 export const metadata = {
   metadataBase: new URL("https://iaswinnishers.com"),
@@ -39,6 +40,8 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
 
         <Footer />
+
+        <CounsellingPopup />
       </body>
     </html>
   );

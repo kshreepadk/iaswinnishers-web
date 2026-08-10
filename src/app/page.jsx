@@ -51,7 +51,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="px-6 pb-16 pt-14 md:pb-20 md:pt-16">
+      <section className="px-6 pb-16 pt-6 md:pb-20 md:pt-8">
         <div className="mx-auto grid max-w-[1200px] items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
           <div>
             <span className="eyebrow">An Institute for Winning Finish in IAS Exam</span>
