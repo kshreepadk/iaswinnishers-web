@@ -76,7 +76,7 @@ export default function HomePage() {
           </div>
 
           {/* Animated staircase illustration — steps rise into place on load */}
-          <div className="self-start md:-mt-10">
+          <div className="self-start md:mt-2">
             <HeroStaircase />
           </div>
         </div>
