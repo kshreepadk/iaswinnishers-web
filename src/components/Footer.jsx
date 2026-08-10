@@ -58,6 +58,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-[14.5px]">
               <li><a href="tel:+919886273325" className="hover:text-marigold">+91 98862 73325</a></li>
               <li><a href="tel:+919916527480" className="hover:text-marigold">+91 99165 27480</a></li>
+              <li><a href="https://wa.me/919886273325" target="_blank" rel="noopener noreferrer" className="hover:text-marigold">WhatsApp Us</a></li>
               <li><a href="mailto:vinayenterprising@gmail.com" className="hover:text-marigold">vinayenterprising@gmail.com</a></li>
               <li><Link href="/contact" className="hover:text-marigold">Bengaluru, Karnataka</Link></li>
             </ul>
@@ -67,8 +68,18 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-between gap-3.5 pt-6 text-[13px]">
           <span>© {new Date().getFullYear()} IAS Winnishers. All rights reserved.</span>
           <div className="flex gap-3.5">
-            <a href="https://www.facebook.com/iaswinnisher/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-coral">f</a>
-            <a href="https://www.instagram.com/iaswinnishers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-coral">in</a>
+            <a href="https://www.facebook.com/iaswinnisher/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-coral">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.5 21v-7.5h2.52l.38-3H13.5V8.48c0-.87.24-1.46 1.5-1.46h1.6V4.35C16.32 4.24 15.36 4.13 14.24 4.13c-2.35 0-3.95 1.43-3.95 4.06v2.36H7.75v3H10.29V21h3.21z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/iaswinnishers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-coral">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

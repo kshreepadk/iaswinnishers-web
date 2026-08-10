@@ -17,7 +17,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/95">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/95 shadow-[0_1px_12px_rgba(38,24,15,0.06)]">
       <nav className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-3.5">
         <Link href="/" aria-label="IAS Winnishers home" className="flex items-center">
           <Image
