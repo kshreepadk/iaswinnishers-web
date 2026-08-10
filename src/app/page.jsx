@@ -202,9 +202,9 @@ export default function HomePage() {
               Choose the stage you're starting from
             </h2>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+          <div className="no-scrollbar mt-10 -mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 md:grid-cols-4">
             {PROGRAMS.map((p) => (
-              <div key={p.title} className="flex flex-col rounded-md2 border border-line bg-white transition-all hover:-translate-y-1.5 hover:shadow-soft">
+              <div key={p.title} className="flex min-w-[78%] shrink-0 snap-center flex-col rounded-md2 border border-line bg-white transition-all hover:-translate-y-1.5 hover:shadow-soft sm:min-w-0 sm:shrink sm:snap-none">
                 <div className="p-6 pb-0">
                   <span className="mb-3 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase tracking-wide text-leaf">
                     {p.tag}
@@ -218,6 +218,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="mt-3 text-center text-xs text-ink-2 sm:hidden">Swipe to see more →</p>
           <div className="mt-10 text-center">
             <Link href="/programs" className="btn btn-primary">View All Programs</Link>
           </div>
@@ -265,9 +266,9 @@ export default function HomePage() {
               Aspirants who found their steady footing here
             </h2>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="no-scrollbar mt-12 -mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="rounded-md2 border border-line bg-white p-7">
+              <div key={t.name} className="min-w-[82%] shrink-0 snap-center rounded-md2 border border-line bg-white p-7 md:min-w-0 md:shrink md:snap-none">
                 <div className="mb-3.5 text-marigold">★★★★★</div>
                 <p className="text-[15px] text-ink-2">{t.quote}</p>
                 <div className="mt-5 flex items-center gap-3">
@@ -282,6 +283,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="mt-3 text-center text-xs text-ink-2 md:hidden">Swipe to see more →</p>
         </div>
       </section>
 
