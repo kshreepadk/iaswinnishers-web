@@ -61,18 +61,19 @@ export default function HeroStaircase() {
           </g>
         ))}
 
-        <g
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "scale(1)" : "scale(0.5)",
-            transformOrigin: "440px 18px",
-            transformBox: "fill-box",
-            transition: `opacity 0.4s ease ${STEPS.length * 0.15 + 0.1}s, transform 0.4s ease ${STEPS.length * 0.15 + 0.1}s`,
-          }}
-          transform="translate(440,70)"
-        >
-          <rect x="-2" y="-52" width="4" height="52" fill="#26180F" />
-          <path d="M2 -50 L38 -40 L2 -30 Z" fill="#26180F" />
+        <g transform="translate(440,70)">
+          <g
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "scale(1)" : "scale(0.5)",
+              transformOrigin: "0px 0px",
+              transformBox: "fill-box",
+              transition: `opacity 0.4s ease ${STEPS.length * 0.15 + 0.1}s, transform 0.4s ease ${STEPS.length * 0.15 + 0.1}s`,
+            }}
+          >
+            <rect x="-2" y="-52" width="4" height="52" fill="#26180F" />
+            <path d="M2 -50 L38 -40 L2 -30 Z" fill="#26180F" />
+          </g>
         </g>
       </svg>
     </div>
