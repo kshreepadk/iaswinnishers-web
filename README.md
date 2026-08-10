@@ -61,6 +61,39 @@ It's already listed in `.gitignore`, so a normal `git add .` / `git commit`
 won't include it — but never manually add it or paste its contents
 anywhere public. The service role key has full access to your database.
 
+## Email setup (Resend) — do this once
+
+When someone requests a free resource (NCERT booklist, study planner,
+syllabus map), the site automatically emails them the PDF. This needs a
+free [Resend](https://resend.com) account.
+
+1. **Sign up** at resend.com (free tier: 3,000 emails/month, plenty for this).
+2. **Get your API key**: in the Resend dashboard, go to **API Keys** →
+   "Create API Key". Copy it.
+3. **Add it locally**: put it in `.env.local` as `RESEND_API_KEY=...`
+   (see `.env.local.example`).
+4. **Add it to Vercel** too, same as the Supabase keys (Settings →
+   Environment Variables), then redeploy.
+5. **Set `SITE_URL`**: also in both `.env.local` and Vercel, set this to
+   your actual site's address (e.g. `https://iaswinnishers.com`, or your
+   `.vercel.app` URL if you haven't connected a custom domain yet) — this
+   is what makes the download link inside the email actually work.
+
+**Getting started vs. production:** by default, emails send from
+`onboarding@resend.dev`, which works immediately with zero extra setup —
+good for testing. Before this feels fully "real" to aspirants, verify your
+own domain in Resend (Domains → Add Domain, then add the DNS records it
+gives you) and change the `from` address in `src/lib/email.js` to something
+like `IAS Winnishers <hello@iaswinnishers.com>`. Un-verified sending domains
+can sometimes land in spam — verifying your domain fixes that.
+
+### Adding a new downloadable resource later
+
+Everything about a resource lives in one place: `src/lib/resources.js`. To
+add a fourth one: drop the PDF into `public/resources/`, add one entry to
+that file, then add a matching `<LeadForm source="resources-your-slug" />`
+wherever you want the form to appear. No other file needs to change.
+
 ## Deploying
 
 1. Push this project to a GitHub repository.

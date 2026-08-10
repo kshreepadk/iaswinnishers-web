@@ -3,13 +3,13 @@
 import { useState } from "react";
 
 export default function LeadForm({ buttonLabel = "Send it to me", source = "unknown" }) {
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
-  const [errorMessage, setErrorMessage] = useState("");
+  const [status, setStatus] = useState("idle"); // idle | loading | success | warning | error
+  const [message, setMessage] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("loading");
-    setErrorMessage("");
+    setMessage("");
 
     const form = e.target;
     const payload = {
@@ -28,15 +28,20 @@ export default function LeadForm({ buttonLabel = "Send it to me", source = "unkn
       const data = await res.json();
 
       if (!res.ok) {
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setMessage(data.error || "Something went wrong. Please try again.");
         setStatus("error");
         return;
       }
 
-      setStatus("success");
+      if (data.warning) {
+        setMessage(data.warning);
+        setStatus("warning");
+      } else {
+        setStatus("success");
+      }
       form.reset();
     } catch {
-      setErrorMessage("Couldn't reach the server. Try again in a moment.");
+      setMessage("Couldn't reach the server. Try again in a moment.");
       setStatus("error");
     }
   }
@@ -44,9 +49,13 @@ export default function LeadForm({ buttonLabel = "Send it to me", source = "unkn
   if (status === "success") {
     return (
       <p className="mt-1 text-sm font-semibold text-leaf">
-        Thanks! Check your inbox in the next few minutes.
+        Sent! Check your inbox in the next few minutes (and your spam folder, just in case).
       </p>
     );
+  }
+
+  if (status === "warning") {
+    return <p className="mt-1 text-sm font-semibold text-marigold-dark">{message}</p>;
   }
 
   return (
@@ -61,7 +70,7 @@ export default function LeadForm({ buttonLabel = "Send it to me", source = "unkn
       />
       <input type="text" name="name" placeholder="Your name" required className="field-input flex-1 !rounded-full" />
       <input type="email" name="email" placeholder="Email address" required className="field-input flex-1 !rounded-full" />
-      {status === "error" && <p className="w-full text-sm font-semibold text-coral-dark">{errorMessage}</p>}
+      {status === "error" && <p className="w-full text-sm font-semibold text-coral-dark">{message}</p>}
       <button type="submit" disabled={status === "loading"} className="btn btn-primary w-full !py-2.5 text-sm disabled:opacity-60">
         {status === "loading" ? "Sending…" : buttonLabel}
       </button>

@@ -28,8 +28,8 @@ export default function RootLayout({ children }) {
               </a>
             </div>
             <div className="flex gap-3.5">
-              <a href="#" className="opacity-90 hover:opacity-100 hover:text-marigold">Facebook</a>
-              <a href="#" className="opacity-90 hover:opacity-100 hover:text-marigold">Instagram</a>
+              <a href="https://www.facebook.com/iaswinnisher/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 hover:text-marigold">Facebook</a>
+              <a href="https://www.instagram.com/iaswinnishers/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 hover:text-marigold">Instagram</a>
             </div>
           </div>
         </div>

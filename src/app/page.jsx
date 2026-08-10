@@ -37,7 +37,7 @@ const PROGRAMS = [
 
 const RESOURCES = [
   { title: "NCERT Booklist, Prioritized", body: "The exact NCERTs to read, and the order to read them in, for every GS subject." },
-  { title: "PYQs, Mapped by Topic", body: "Previous year questions organized by syllabus topic instead of by year." },
+  { title: "The 12-Month Study Planner", body: "A fillable template built around three real phases, not twelve identical months." },
   { title: "One-Page UPSC Syllabus Map", body: "The entire GS syllabus laid out visually on a single page." },
 ];
 
@@ -232,7 +232,7 @@ export default function HomePage() {
               Tools to help you get moving today
             </h2>
             <p className="mt-4 text-[16.5px] text-ink-2">
-              A booklist, real PYQs, and a full syllabus map — built to help you make
+              A booklist, a study planner, and a full syllabus map — built to help you make
               progress right now, whether or not you ever join us.
             </p>
           </div>

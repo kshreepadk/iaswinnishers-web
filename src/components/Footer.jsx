@@ -67,8 +67,8 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-between gap-3.5 pt-6 text-[13px]">
           <span>© {new Date().getFullYear()} IAS Winnishers. All rights reserved.</span>
           <div className="flex gap-3.5">
-            <a href="#" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-coral">f</a>
-            <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-coral">in</a>
+            <a href="https://www.facebook.com/iaswinnisher/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-coral">f</a>
+            <a href="https://www.instagram.com/iaswinnishers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-coral">in</a>
           </div>
         </div>
       </div>

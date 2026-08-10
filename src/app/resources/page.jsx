@@ -5,9 +5,9 @@ import VideoEmbed from "@/components/VideoEmbed";
 import { getLatestVideos, YOUTUBE_CHANNEL_URL } from "@/lib/youtube";
 
 export const metadata = {
-  title: "Free UPSC Resources | NCERT Booklist, PYQs & Syllabus Map",
+  title: "Free UPSC Resources | NCERT Booklist, Study Planner & Syllabus Map",
   description:
-    "Free UPSC resources from IAS Winnishers — a prioritized NCERT booklist, topic-mapped PYQs, and a full syllabus map. No cost, no obligation.",
+    "Free UPSC resources from IAS Winnishers — a prioritized NCERT booklist, a 12-month study planner, and a full syllabus map. No cost, no obligation.",
   alternates: { canonical: "/resources" },
 };
 
@@ -18,9 +18,9 @@ const RESOURCES = [
     body: "The exact NCERTs to read, and the order to read them in, for every GS subject — no more guessing where to start.",
   },
   {
-    slug: "pyqs-by-topic",
-    title: "PYQs, Mapped by Topic",
-    body: "Previous year questions organized by syllabus topic instead of by year — revise a topic, then test it immediately.",
+    slug: "study-planner",
+    title: "The 12-Month Study Planner",
+    body: "A fillable template built around three real phases, not twelve identical months — pairs with our blog post on building a plan that survives contact with reality.",
   },
   {
     slug: "syllabus-map",
@@ -38,7 +38,7 @@ export default async function ResourcesPage() {
         center
         eyebrow="Take Your Next Step"
         title="Tools to help you get moving today"
-        description="A booklist, real PYQs, and a full syllabus map — built to help you make progress right now, whether or not you ever join us."
+        description="A booklist, a study planner, and a full syllabus map — built to help you make progress right now, whether or not you ever join us."
       />
 
       <section className="bg-white px-6 py-16">

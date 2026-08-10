@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServerClient } from "@/lib/supabaseServer";
+import { getResource } from "@/lib/resources";
+import { sendResourceEmail } from "@/lib/email";
 
 // Very small, dependency-free email format check — good enough to catch
 // obvious mistakes without pulling in a validation library for one field.
@@ -55,6 +57,27 @@ export async function POST(request) {
     if (error) {
       console.error("Supabase insert error:", error);
       return NextResponse.json({ error: "Something went wrong saving your details. Please try again." }, { status: 500 });
+    }
+
+    // If this submission came from a resource card (source is
+    // "resources-<slug>", e.g. "resources-ncert-booklist"), automatically
+    // email the matching PDF. Any other source (contact-form,
+    // blog-newsletter, etc.) just saves the lead as before — no email sent
+    // since there's no file to attach.
+    if (email && source && source.startsWith("resources-")) {
+      const slug = source.replace("resources-", "");
+      const resource = getResource(slug);
+      if (resource) {
+        // Don't let an email failure break the form submission itself —
+        // the lead is already safely saved either way.
+        const result = await sendResourceEmail({ to: email, name, resource });
+        if (result.error) {
+          return NextResponse.json({
+            ok: true,
+            warning: "Saved, but the email couldn't be sent. We'll follow up directly.",
+          });
+        }
+      }
     }
 
     return NextResponse.json({ ok: true });
