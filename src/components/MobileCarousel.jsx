@@ -31,7 +31,7 @@ export default function MobileCarousel({ items, itemWidthClass = "w-[82%]", hidd
     setActive(closest);
   }, []);
 
-  const hiddenClass = hiddenAbove === "md" ? "md:hidden" : "sm:hidden";
+  const hiddenClass = hiddenAbove === "none" ? "" : hiddenAbove === "md" ? "md:hidden" : "sm:hidden";
 
   return (
     <div className={`${hiddenClass} ${className}`}>

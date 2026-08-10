@@ -1,6 +1,5 @@
 import Link from "next/link";
 import HeroStaircase from "@/components/HeroStaircase";
-import ProgramFinder from "@/components/ProgramFinder";
 import CountUp from "@/components/CountUp";
 import MobileCarousel from "@/components/MobileCarousel";
 
@@ -37,6 +36,7 @@ const PROGRAMS = [
   { tag: "Objective Round", title: "Prelims Mastery Program", body: "Timed, full-length mock tests on the real exam pattern, with detailed error analysis after every attempt.", href: "/programs#prelims-mastery" },
   { tag: "Descriptive Round", title: "Mains Mastery Program", body: "Weekly answer writing across all GS papers, Essay, and your optional subject — Geography, Polity and Psychology especially well covered.", href: "/programs#mains-mastery" },
   { tag: "Personality Test", title: "Interview Guidance", body: "One-on-one DAF review, personality-test preparation, and steady confidence coaching before the big day.", href: "/programs#interview" },
+  { tag: "For Repeat Attempts", title: "Reassess & Restart Program", body: "Didn't clear this attempt? A coach helps you honestly assess what happened and rebuild a plan from exactly where you actually are — not from scratch.", href: "/programs#reassess-restart" },
 ];
 
 const RESOURCES = [
@@ -76,7 +76,7 @@ export default function HomePage() {
           </div>
 
           {/* Animated staircase illustration — steps rise into place on load */}
-          <div className="self-start md:mt-2">
+          <div className="self-start md:mt-8">
             <HeroStaircase />
           </div>
         </div>
@@ -96,8 +96,6 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-
-      <ProgramFinder />
 
       {/* STAT STRIP */}
       <section className="border-y border-line px-6 py-10">
@@ -197,11 +195,11 @@ export default function HomePage() {
             </h2>
           </div>
           <MobileCarousel
-            hiddenAbove="sm"
+            hiddenAbove="none"
             className="mt-10"
-            itemWidthClass="w-[80%]"
+            itemWidthClass="w-[80%] sm:w-[46%] lg:w-[30%]"
             items={PROGRAMS.map((p) => (
-              <div key={p.title} className="flex h-full flex-col rounded-md2 border border-line bg-white">
+              <div key={p.title} className="flex h-full flex-col rounded-md2 border border-line bg-white transition-all hover:-translate-y-1.5 hover:shadow-soft">
                 <div className="p-6 pb-0">
                   <span className="mb-3 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase tracking-wide text-leaf">
                     {p.tag}
@@ -215,23 +213,6 @@ export default function HomePage() {
               </div>
             ))}
           />
-
-          <div className="mt-10 hidden gap-5 sm:grid sm:grid-cols-2 md:grid-cols-4">
-            {PROGRAMS.map((p) => (
-              <div key={p.title} className="flex flex-col rounded-md2 border border-line bg-white transition-all hover:-translate-y-1.5 hover:shadow-soft">
-                <div className="p-6 pb-0">
-                  <span className="mb-3 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase tracking-wide text-leaf">
-                    {p.tag}
-                  </span>
-                  <h3 className="mb-2 font-display text-[19px] font-semibold">{p.title}</h3>
-                </div>
-                <p className="px-6 text-sm text-ink-2">{p.body}</p>
-                <div className="mt-auto flex items-center justify-end border-t border-line p-6">
-                  <Link href={p.href} className="btn btn-ghost !px-4 !py-2.5 text-sm">Details</Link>
-                </div>
-              </div>
-            ))}
-          </div>
 
           <div className="mt-10 text-center">
             <Link href="/programs" className="btn btn-primary">View All Programs</Link>
@@ -281,9 +262,9 @@ export default function HomePage() {
             </h2>
           </div>
           <MobileCarousel
-            hiddenAbove="md"
+            hiddenAbove="none"
             className="mt-12"
-            itemWidthClass="w-[84%]"
+            itemWidthClass="w-[85%] sm:w-[47%]"
             items={TESTIMONIALS.map((t) => (
               <div key={t.name} className="h-full rounded-md2 border border-line bg-white p-7">
                 <div className="mb-3.5 text-marigold">★★★★★</div>
@@ -300,24 +281,6 @@ export default function HomePage() {
               </div>
             ))}
           />
-
-          <div className="mt-12 hidden gap-6 md:grid md:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="rounded-md2 border border-line bg-white p-7">
-                <div className="mb-3.5 text-marigold">★★★★★</div>
-                <p className="text-[15px] text-ink-2">{t.quote}</p>
-                <div className="mt-5 flex items-center gap-3">
-                  <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-marigold font-display font-bold text-ink">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <strong className="block text-sm text-ink">{t.name}</strong>
-                    <span className="text-xs text-ink-2/70">{t.program}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

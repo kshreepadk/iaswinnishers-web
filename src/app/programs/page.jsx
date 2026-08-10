@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "UPSC Coaching Programs",
   description:
-    "Explore IAS Winnishers' UPSC coaching programs — the Foundation to Winning Finish Program, Prelims Mastery, Mains Mastery, Geography/Economy/Current Affairs Made Easy, and Interview Guidance, each with a dedicated personal coach.",
+    "Explore IAS Winnishers' UPSC coaching programs — the Foundation to Winning Finish Program, Prelims Mastery, Mains Mastery, Geography/Economy/Current Affairs Made Easy, Interview Guidance, and our Reassess & Restart Program for repeat attempts — each with a dedicated personal coach.",
   alternates: { canonical: "/programs" },
 };
 
@@ -228,6 +228,29 @@ export default function ProgramsPage() {
             <p className="mb-4 text-sm text-ink-2">One-on-one sessions that build genuine confidence first, grounded in your own DAF.</p>
             <h3 className="mb-1.5 font-display text-base font-semibold">Also includes</h3>
             <p className="text-sm text-ink-2">Personality-test preparation and steady confidence coaching.</p>
+          </>
+        }
+      />
+
+      <ProgramSection
+        id="reassess-restart"
+        bg="bg-paper-2"
+        eyebrow="For Repeat Attempts"
+        title="Reassess & Restart Program"
+        description="Not clearing an attempt doesn't mean starting over from zero — it means figuring out, honestly, what actually needs to change. This program is for aspirants regrouping after a result, especially the stretch right after Prelims results in June, who need a coach to help them see clearly where to restart rather than guessing on their own."
+        bullets={[
+          "An honest review of your last attempt — what worked, what didn't, and why",
+          "A fresh study plan built from where you actually are, not from scratch",
+          "Help deciding whether to revisit Foundation, focus on Prelims, or move straight to Mains prep",
+          "The same steady, one-on-one coaching model as every other program here",
+        ]}
+        side={
+          <>
+            <span className="mb-2 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase text-leaf">Rolling admission</span>
+            <h3 className="mb-1.5 font-display text-base font-semibold">Who it&apos;s for</h3>
+            <p className="mb-4 text-sm text-ink-2">Aspirants who've attempted before and need an honest, structured reset — not another generic restart.</p>
+            <h3 className="mb-1.5 font-display text-base font-semibold">Best time to start</h3>
+            <p className="text-sm text-ink-2">Right after any result — Prelims, Mains, or Interview — while it&apos;s still fresh.</p>
           </>
         }
       />

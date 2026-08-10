@@ -48,6 +48,7 @@ export default function Footer() {
               <li><Link href="/programs#economy" className="hover:text-marigold">Economy Made Easy</Link></li>
               <li><Link href="/programs#current-affairs" className="hover:text-marigold">Current Affairs Made Easy</Link></li>
               <li><Link href="/programs#interview" className="hover:text-marigold">Interview Guidance</Link></li>
+              <li><Link href="/programs#reassess-restart" className="hover:text-marigold">Reassess &amp; Restart Program</Link></li>
             </ul>
           </div>
 
