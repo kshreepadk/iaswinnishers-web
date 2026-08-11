@@ -71,10 +71,10 @@ export default function CounsellingPopup() {
 
         <span className="eyebrow">Still deciding?</span>
         <h2 className="mt-3 font-display text-xl font-semibold text-ink sm:text-2xl">
-          Let&apos;s talk it through — no obligation
+          Let&apos;s talk it through
         </h2>
         <p className="mt-2.5 text-sm text-ink-2">
-          A short, honest conversation with a coach: where you stand, what&apos;s
+          A short, honest conversation with an exam expert: where you stand, what&apos;s
           realistic, and what your first month could look like.
         </p>
 
