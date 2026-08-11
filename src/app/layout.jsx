@@ -13,7 +13,6 @@ export const metadata = {
   },
   description:
     "IAS Winnishers pairs every UPSC aspirant with a dedicated personal coach — structured GS classes, answer-writing, test series, interview guidance and steady mentoring, from your first day to your winning finish.",
-  icons: { icon: "data:," },
 };
 
 export default function RootLayout({ children }) {
