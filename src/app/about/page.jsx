@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -126,7 +127,13 @@ export default function AboutPage() {
           </h2>
           <div className="mt-10 flex justify-center">
             <div className="card max-w-[320px] text-center">
-              <div className="mx-auto mb-4 h-[88px] w-[88px] rounded-full bg-gradient-to-br from-marigold to-coral" />
+              <Image
+                src="/team/vinay-kumar.jpg"
+                alt="Vinay Kumar R"
+                width={176}
+                height={176}
+                className="mx-auto mb-4 h-[88px] w-[88px] rounded-full object-cover"
+              />
               <h3 className="font-display text-lg font-semibold">Vinay Kumar R</h3>
               <p className="mb-2.5 text-[13.5px] font-bold text-coral-dark">Founder &amp; Lead Coach</p>
               <p className="text-sm text-ink-2">

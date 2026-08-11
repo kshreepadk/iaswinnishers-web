@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import HeroStaircase from "@/components/HeroStaircase";
 import CountUp from "@/components/CountUp";
 import MobileCarousel from "@/components/MobileCarousel";
@@ -33,10 +34,10 @@ const JOURNEY = [
 
 const PROGRAMS = [
   { tag: "18–22 Months", title: "Foundation to Winning Finish Program", body: "One continuous journey, from your first NCERT to your final interview — the same coach with you at every single stage.", href: "/programs#foundation-to-finish" },
+  { tag: "For Repeat Attempts", title: "Reassess & Restart Program", body: "Didn't clear this attempt? A coach helps you honestly assess what happened and rebuild a plan from exactly where you actually are — not from scratch.", href: "/programs#reassess-restart" },
   { tag: "Objective Round", title: "Prelims Mastery Program", body: "Timed, full-length mock tests on the real exam pattern, with detailed error analysis after every attempt.", href: "/programs#prelims-mastery" },
   { tag: "Descriptive Round", title: "Mains Mastery Program", body: "Weekly answer writing across all GS papers, Essay, and your optional subject — Geography, Polity and Psychology especially well covered.", href: "/programs#mains-mastery" },
   { tag: "Personality Test", title: "Interview Guidance", body: "One-on-one DAF review, personality-test preparation, and steady confidence coaching before the big day.", href: "/programs#interview" },
-  { tag: "For Repeat Attempts", title: "Reassess & Restart Program", body: "Didn't clear this attempt? A coach helps you honestly assess what happened and rebuild a plan from exactly where you actually are — not from scratch.", href: "/programs#reassess-restart" },
 ];
 
 const RESOURCES = [
@@ -46,9 +47,10 @@ const RESOURCES = [
 ];
 
 const TESTIMONIALS = [
-  { initials: "AS", name: "Akash S.", program: "Interview Guidance", quote: "My coach helped me build real clarity before the interview — patient, structured conversations that made me feel prepared instead of anxious on the actual day." },
-  { initials: "SE", name: "Shiva E.", program: "Mains Test Series", quote: "Weekly tests with detailed, honest feedback made all the difference. Preparing here felt systematic rather than scattered across ten different sources." },
-  { initials: "SN", name: "Sandesh N.", program: "Foundation to Winning Finish Program", quote: "My coach kept me engaged with exam-oriented questions even outside class hours — lively, energetic teaching that never let my momentum drop." },
+  { photo: "/testimonials/akash-shankar.jpg", name: "Dr. Akash Shankar, IAS", program: "Interview Guidance", quote: "My coach helped me build real clarity before the interview — patient, structured conversations that made me feel prepared instead of anxious on the actual day." },
+  { photo: "/testimonials/shiva-shankar.jpg", name: "Shiva Shankar E, IFS", program: "Mains Test Series", quote: "Weekly tests with detailed, honest feedback made all the difference. Preparing here felt systematic rather than scattered across ten different sources." },
+  { photo: "/testimonials/sandesh-nayak.jpg", name: "Sandesh Nayak, IAS", program: "Foundation to Winning Finish Program", quote: "My coach kept me engaged with exam-oriented questions even outside class hours — lively, energetic teaching that never let my momentum drop." },
+  { photo: "/testimonials/radhika-g.jpg", name: "Radhika G, IPS", program: "Prelims Mastery Program", quote: "The test series felt exactly like the real exam, and the error analysis after every attempt told me precisely what to fix — nothing vague, always specific." },
 ];
 
 export default function HomePage() {
@@ -197,7 +199,7 @@ export default function HomePage() {
           <MobileCarousel
             hiddenAbove="none"
             className="mt-10"
-            itemWidthClass="w-[80%] sm:w-[46%] lg:w-[30%]"
+            itemWidthClass="w-[85%] sm:w-[47%]"
             items={PROGRAMS.map((p) => (
               <div key={p.title} className="flex h-full flex-col rounded-md2 border border-line bg-white transition-all hover:-translate-y-1.5 hover:shadow-soft">
                 <div className="p-6 pb-0">
@@ -270,9 +272,13 @@ export default function HomePage() {
                 <div className="mb-3.5 text-marigold">★★★★★</div>
                 <p className="text-[15px] text-ink-2">{t.quote}</p>
                 <div className="mt-5 flex items-center gap-3">
-                  <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-marigold font-display font-bold text-ink">
-                    {t.initials}
-                  </div>
+                  <Image
+                    src={t.photo}
+                    alt={t.name}
+                    width={56}
+                    height={56}
+                    className="h-14 w-14 flex-none rounded-full border-2 border-paper-2 object-cover"
+                  />
                   <div>
                     <strong className="block text-sm text-ink">{t.name}</strong>
                     <span className="text-xs text-ink-2/70">{t.program}</span>
