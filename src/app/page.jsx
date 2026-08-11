@@ -281,7 +281,6 @@ export default function HomePage() {
                   />
                   <div>
                     <strong className="block text-sm text-ink">{t.name}</strong>
-                    <span className="text-xs text-ink-2/70">{t.program}</span>
                   </div>
                 </div>
               </div>

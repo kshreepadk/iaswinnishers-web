@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounsellingPopup from "@/components/CounsellingPopup";
@@ -84,6 +85,8 @@ export default function RootLayout({ children }) {
 
         <CounsellingPopup />
         <FloatingContact />
+
+        <Analytics />
       </body>
     </html>
   );
