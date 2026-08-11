@@ -1,9 +1,20 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { getSupabaseServerClient } from "@/lib/supabaseServer";
+import { verifySessionToken, ADMIN_COOKIE_NAME } from "@/lib/adminAuth";
 
 const ALLOWED_STATUSES = ["new", "contacted", "enrolled", "not_interested"];
 
 export async function PATCH(request, { params }) {
+  // This route isn't covered by the protected layout (layouts only wrap
+  // pages, not API routes), so it checks the session cookie itself.
+  const cookieStore = await cookies();
+  const token = cookieStore.get(ADMIN_COOKIE_NAME)?.value;
+  const valid = await verifySessionToken(token);
+  if (!valid) {
+    return NextResponse.json({ error: "Not authenticated." }, { status: 401 });
+  }
+
   const { id } = await params;
   const body = await request.json().catch(() => ({}));
   const updates = {};
