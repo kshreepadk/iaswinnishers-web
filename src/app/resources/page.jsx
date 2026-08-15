@@ -5,9 +5,9 @@ import VideoEmbed from "@/components/VideoEmbed";
 import { getLatestVideos, YOUTUBE_CHANNEL_URL } from "@/lib/youtube";
 
 export const metadata = {
-  title: "Free UPSC Resources | NCERT Booklist, Study Planner & Syllabus Map",
+  title: "Free UPSC Resources | NCERT Booklist, PYQs & Syllabus Map",
   description:
-    "Free UPSC resources from IAS Winnishers — a prioritized NCERT booklist, a 12-month study planner, and a full syllabus map. No cost, no obligation.",
+    "Free UPSC resources from IAS Winnishers — a prioritized NCERT booklist, 5 years of topic-wise PYQs, and a full syllabus map. No cost, no obligation.",
   alternates: { canonical: "/resources" },
 };
 
@@ -19,10 +19,10 @@ const RESOURCES = [
     file: "/resources/ncert-booklist.pdf",
   },
   {
-    slug: "study-planner",
-    title: "The 12-Month Study Planner",
-    body: "A fillable template built around three real phases, not twelve identical months — pairs with our blog post on building a plan that survives contact with reality.",
-    file: "/resources/study-planner.pdf",
+    slug: "pyqs-topic-wise",
+    title: "5 Years of PYQs, Topic-Wise",
+    body: "Real UPSC questions from the last 5 years, organized by subject instead of by year — revise a topic, then test it immediately.",
+    file: "/resources/pyqs-topic-wise.pdf",
   },
   {
     slug: "syllabus-map",
@@ -41,7 +41,7 @@ export default async function ResourcesPage() {
         center
         eyebrow="Take Your Next Step"
         title="Tools to help you get moving today"
-        description="A booklist, a study planner, and a full syllabus map — built to help you make progress right now, whether or not you ever join us."
+        description="A booklist, 5 years of topic-wise PYQs, and a full syllabus map — built to help you make progress right now, whether or not you ever join us."
       />
 
       <section className="bg-white px-6 py-16">
@@ -65,13 +65,13 @@ export default async function ResourcesPage() {
         <section className="bg-paper-2 px-6 py-16">
           <div className="mx-auto max-w-[1200px]">
             <div className="mx-auto max-w-[680px] text-center">
-              <span className="eyebrow justify-center">Watch &amp; Learn</span>
+              <span className="eyebrow justify-center">From Our Channel</span>
               <h2 className="mt-3.5 font-display text-2xl font-semibold md:text-[30px]">
-                Watch before you decide anything
+                Free videos to help you along the way
               </h2>
               <p className="mt-3.5 text-ink-2">
-                A few recent classes from our YouTube channel — the same
-                teaching style you&apos;d get as a coached aspirant here.
+                A few recent uploads from our YouTube channel — useful on
+                their own, whether or not you ever join us.
               </p>
             </div>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -84,7 +84,7 @@ export default async function ResourcesPage() {
             </div>
             <div className="mt-9 text-center">
               <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-                Subscribe on YouTube
+                Explore More on YouTube
               </a>
             </div>
           </div>

@@ -74,8 +74,8 @@ export default function CounsellingPopup() {
           Let&apos;s talk it through
         </h2>
         <p className="mt-2.5 text-sm text-ink-2">
-          A short, honest conversation with an exam expert: where you stand, what&apos;s
-          realistic, and what your first month could look like.
+          A short, honest conversation with an exam expert: where you stand,
+          and how to progress step by step to success as applied to you.
         </p>
 
         <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">

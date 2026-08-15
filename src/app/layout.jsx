@@ -8,8 +8,8 @@ import FloatingContact from "@/components/FloatingContact";
 export const metadata = {
   metadataBase: new URL("https://iaswinnishers.com"),
   title: {
-    default: "IAS Winnishers | Personalised UPSC & IAS Coaching",
-    template: "%s | IAS Winnishers",
+    default: "IAS Winnishers - Personalised UPSC Coaching",
+    template: "IAS Winnishers - %s",
   },
   description:
     "IAS Winnishers pairs every UPSC aspirant with a dedicated personal coach — structured GS classes, answer-writing, test series, interview guidance and steady mentoring, from your first day to your winning finish.",

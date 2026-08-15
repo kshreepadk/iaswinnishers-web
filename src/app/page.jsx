@@ -5,7 +5,7 @@ import CountUp from "@/components/CountUp";
 import MobileCarousel from "@/components/MobileCarousel";
 
 export const metadata = {
-  title: "Personalised UPSC & IAS Coaching with a Dedicated Coach for Every Aspirant",
+  title: "Personalised UPSC Coaching",
   alternates: { canonical: "/" },
 };
 
@@ -42,7 +42,7 @@ const PROGRAMS = [
 
 const RESOURCES = [
   { title: "NCERT Booklist, Prioritized", body: "The exact NCERTs to read, and the order to read them in, for every GS subject." },
-  { title: "The 12-Month Study Planner", body: "A fillable template built around three real phases, not twelve identical months." },
+  { title: "5 Years of PYQs, Topic-Wise", body: "Real UPSC questions from the last 5 years, organized by subject instead of by year." },
   { title: "One-Page UPSC Syllabus Map", body: "The entire GS syllabus laid out visually on a single page." },
 ];
 
@@ -104,9 +104,9 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 text-center md:grid-cols-4">
           {[
             { display: "1:1", label: "Coach-to-student pairing, for every aspirant" },
-            { end: 5, label: "Stages covered — Foundation to Winning Finish" },
+            { end: 5, label: "Stages covered, Foundation to Winning Finish" },
             { display: "Weekly", label: "One-on-one review sessions with your coach" },
-            { end: 100, suffix: "%", label: "Personalised study plans — no fixed template" },
+            { end: 100, suffix: "%", label: "Personalised study plans, no fixed template" },
           ].map((s) => (
             <div key={s.label}>
               <div className="font-display text-3xl font-bold text-ink md:text-[34px]">
@@ -231,7 +231,7 @@ export default function HomePage() {
               Tools to help you get moving today
             </h2>
             <p className="mt-4 text-[16.5px] text-ink-2">
-              A booklist, a study planner, and a full syllabus map — built to help you make
+              A booklist, 5 years of topic-wise PYQs, and a full syllabus map — built to help you make
               progress right now, whether or not you ever join us.
             </p>
           </div>
