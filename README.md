@@ -63,25 +63,51 @@ anywhere public. The service role key has full access to your database.
 
 ## How resource downloads work
 
-There's no email service involved at all — it's deliberately simple. The
-three free resources (NCERT booklist, study planner, syllabus map) are
-just static PDF files sitting in `public/resources/`, which makes them
-directly downloadable from the live site the moment it's deployed (e.g.
+The three free resources (NCERT booklist, PYQs by topic, syllabus map) are
+static PDF files sitting in `public/resources/`, which makes them directly
+downloadable from the live site the moment it's deployed (e.g.
 `https://iaswinnishers.com/resources/ncert-booklist.pdf` works on its own).
 
 When someone fills in the form for one of them:
 1. Their name and email are saved to the `leads` table in Supabase (same
    as every other form on the site).
-2. The browser immediately downloads the matching PDF — no waiting on an
-   email, no third-party service, nothing that can silently fail.
+2. The browser immediately downloads the matching PDF — no waiting on
+   anything, this part never depends on email.
+3. A short "thanks for downloading" email is also sent, with how to reach
+   us for any questions. This part *does* need the Resend setup below —
+   if it's not configured, the download still works fine, the email is
+   just silently skipped (see the server logs if you want to confirm).
 
 ### Adding a new downloadable resource later
 
 1. Drop the new PDF into `public/resources/`.
 2. In `src/app/resources/page.jsx`, add one entry to the `RESOURCES` array
    at the top (title, body text, and the `file` path).
-3. That's it — the card, the form, and the instant download all just work
-   from that one entry.
+3. Also add a matching entry to `RESOURCE_TITLES` in
+   `src/app/api/leads/route.js`, so the thank-you email uses a proper
+   title instead of skipping the email for that resource.
+
+## Email setup (Resend) — do this once
+
+This powers only the short "thanks for downloading" follow-up email — the
+download itself never depends on this being set up.
+
+1. **Sign up** at [resend.com](https://resend.com) (free tier: 3,000
+   emails/month, far more than this site needs).
+2. **Get your API key**: in the Resend dashboard, go to **API Keys** →
+   "Create API Key". Copy it.
+3. **Add it locally**: put it in `.env.local` as `RESEND_API_KEY=...`
+   (see `.env.local.example`).
+4. **Add it to Vercel** too, same as the other keys (Settings →
+   Environment Variables), then redeploy.
+
+**Getting started vs. production:** by default, emails send from
+`onboarding@resend.dev`, which works immediately with zero extra setup —
+good for testing. Before this feels fully "real" to aspirants, verify your
+own domain in Resend (Domains → Add Domain, then add the DNS records it
+gives you) and change the `from` address in `src/lib/email.js` to something
+like `IAS Winnishers <hello@iaswinnishers.com>`. An unverified sending
+domain can land in spam more often — verifying your domain fixes that.
 
 ## Admin dashboard — do this once
 

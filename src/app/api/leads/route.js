@@ -1,5 +1,15 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServerClient } from "@/lib/supabaseServer";
+import { sendThankYouEmail } from "@/lib/email";
+
+// Human-readable titles for the thank-you email, keyed by the resource
+// slug used in `source` (e.g. "resources-ncert-booklist"). Keep this in
+// sync with the RESOURCES array in src/app/resources/page.jsx.
+const RESOURCE_TITLES = {
+  "ncert-booklist": "The NCERT Booklist, Prioritized",
+  "pyqs-topic-wise": "5 Years of PYQs, Topic-Wise",
+  "syllabus-map": "The UPSC Syllabus, on One Page",
+};
 
 // Very small, dependency-free email format check — good enough to catch
 // obvious mistakes without pulling in a validation library for one field.
@@ -58,7 +68,26 @@ export async function POST(request) {
     }
 
     // Resource downloads happen instantly on the page itself (see
-    // LeadForm.jsx) — this endpoint's only job is to record the lead.
+    // LeadForm.jsx) — but for resource requests specifically (not the
+    // Contact form or newsletter), we also send a short thank-you email
+    // with how to reach us. This is awaited (not fire-and-forget) because
+    // serverless functions can be frozen right after the response is
+    // sent, which would silently kill an un-awaited email mid-flight. A
+    // failed email still never blocks or fails the response itself — the
+    // lead is already safely saved, and the download has already started
+    // regardless of what happens here.
+    if (email && source && source.startsWith("resources-")) {
+      const slug = source.replace("resources-", "");
+      const resourceTitle = RESOURCE_TITLES[slug];
+      if (resourceTitle) {
+        try {
+          await sendThankYouEmail({ to: email, name, resourceTitle });
+        } catch (err) {
+          console.error("Thank-you email failed:", err);
+        }
+      }
+    }
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("Lead submission error:", err);
