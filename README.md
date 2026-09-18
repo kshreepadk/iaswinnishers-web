@@ -109,6 +109,49 @@ gives you) and change the `from` address in `src/lib/email.js` to something
 like `IAS Winnishers <hello@iaswinnishers.com>`. An unverified sending
 domain can land in spam more often — verifying your domain fixes that.
 
+## WhatsApp notifications — do this once
+
+Whenever **anyone submits any form** on the site — the Contact form, a
+resource download, the newsletter signup — you get a WhatsApp message with
+their details (name, email/phone, which form, and their message if any).
+This is a notification *to you*, not a message sent to the person who
+submitted the form.
+
+**An honest note on the approach:** this uses
+[CallMeBot](https://www.callmebot.com/blog/free-api-whatsapp-messages/), a
+free, community-run service — not Meta's official WhatsApp Business API.
+The official API requires business verification and pre-approved message
+templates (can take days). CallMeBot works immediately with no signup at
+all, at the cost of being an unofficial, best-effort service — genuinely
+fine for a personal alert like this, but not something to build
+customer-facing WhatsApp messaging on. If you ever want to *message
+aspirants* over WhatsApp (not just notify yourself), that's a bigger,
+separate project using the official Meta Business API.
+
+### Setup
+
+1. **On your phone**, save this contact: `+34 644 84 71 42` (this is
+   CallMeBot's own number, not a company you're signing up with).
+2. **Open WhatsApp** and send this exact message to that number:
+   `I allow callmebot to send me messages`
+3. Within a minute or two, you'll get a reply back with your personal API
+   key (a short number).
+4. **Add both to `.env.local`**:
+   - `WHATSAPP_NOTIFY_PHONE` — your own number, in international format
+     with no `+`, no spaces (e.g. `919886273325`)
+   - `WHATSAPP_APIKEY` — the key CallMeBot just sent you
+5. **Add both to Vercel** too (Settings → Environment Variables), then
+   redeploy.
+
+### Testing it
+
+Submit any form on your live site yourself (the Contact form is the
+easiest test). You should get a WhatsApp message within a few seconds. If
+nothing arrives, check your Vercel deployment's logs for a line starting
+with "CallMeBot" — it'll say exactly what went wrong (usually an expired
+key, since CallMeBot keys can need re-activating after long inactivity —
+just repeat step 2 if that happens).
+
 ## Admin dashboard — do this once
 
 Every form submission (Contact form, resource downloads, newsletter

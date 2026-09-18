@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServerClient } from "@/lib/supabaseServer";
 import { sendThankYouEmail } from "@/lib/email";
+import { sendWhatsAppNotification } from "@/lib/whatsapp";
 
 // Human-readable titles for the thank-you email, keyed by the resource
 // slug used in `source` (e.g. "resources-ncert-booklist"). Keep this in
@@ -65,6 +66,19 @@ export async function POST(request) {
     if (error) {
       console.error("Supabase insert error:", error);
       return NextResponse.json({ error: "Something went wrong saving your details. Please try again." }, { status: 500 });
+    }
+
+    // WhatsApp notification to you (the site owner) — for every form
+    // submission, not just resource downloads. Awaited for the same
+    // reliability reason as the thank-you email below: serverless
+    // functions can be frozen right after the response is sent, which
+    // would silently kill an un-awaited request mid-flight. A failed
+    // notification never blocks or fails the response — the lead is
+    // already safely saved regardless.
+    try {
+      await sendWhatsAppNotification({ name, email, phone, stage, message, source });
+    } catch (err) {
+      console.error("WhatsApp notification failed:", err);
     }
 
     // Resource downloads happen instantly on the page itself (see
