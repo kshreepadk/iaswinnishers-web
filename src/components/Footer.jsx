@@ -58,7 +58,6 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3 text-[14.5px]">
               <li><a href="tel:+919886273325" className="hover:text-marigold">+91 98862 73325</a></li>
-              <li><a href="tel:+919916527480" className="hover:text-marigold">+91 99165 27480</a></li>
               <li><a href="https://wa.me/919886273325" target="_blank" rel="noopener noreferrer" className="hover:text-marigold">WhatsApp Us</a></li>
               <li><a href="mailto:vinayenterprising@gmail.com" className="hover:text-marigold">vinayenterprising@gmail.com</a></li>
               <li><Link href="/contact" className="hover:text-marigold">Bengaluru, Karnataka</Link></li>

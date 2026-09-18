@@ -142,6 +142,12 @@ separate project using the official Meta Business API.
    - `WHATSAPP_APIKEY` — the key CallMeBot just sent you
 5. **Add both to Vercel** too (Settings → Environment Variables), then
    redeploy.
+6. **Want a second person notified too** (e.g. a co-founder or coach)?
+   They repeat steps 1–3 from **their own phone** — CallMeBot ties each
+   key to the number that requested it, so your key won't work for their
+   number. Add their details as `WHATSAPP_NOTIFY_PHONE_2` and
+   `WHATSAPP_APIKEY_2`. If you only want one recipient, just leave both
+   of these blank.
 
 ### Testing it
 

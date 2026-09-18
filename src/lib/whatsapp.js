@@ -1,5 +1,5 @@
-// Sends a WhatsApp message to YOU (the site owner) whenever a form is
-// submitted — a real-time alert, not a message to the customer.
+// Sends a WhatsApp message to YOU (and optionally a second person) whenever
+// a form is submitted — a real-time alert, not a message to the customer.
 //
 // Uses CallMeBot (callmebot.com) — a small, free, community-run service,
 // not Meta's official WhatsApp Business API. This is a deliberate choice:
@@ -9,6 +9,10 @@
 // fine for an internal alert to yourself, but not something to build
 // customer-facing messaging on. See the README for the official upgrade
 // path if you ever want two-way WhatsApp with aspirants themselves.
+//
+// CallMeBot ties each API key to one specific phone number, so a second
+// recipient needs their own key (see the README) — that's why this reads
+// two separate phone/key pairs instead of one list.
 
 function friendlySource(source) {
   if (!source) return "Unknown";
@@ -20,12 +24,33 @@ function friendlySource(source) {
   return source;
 }
 
-export async function sendWhatsAppNotification({ name, email, phone, stage, message, source }) {
-  const notifyPhone = process.env.WHATSAPP_NOTIFY_PHONE;
-  const apiKey = process.env.WHATSAPP_APIKEY;
+async function sendToOne(phone, apiKey, text) {
+  const url = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(
+    phone
+  )}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apiKey)}`;
 
-  if (!notifyPhone || !apiKey) {
-    console.error("WHATSAPP_NOTIFY_PHONE or WHATSAPP_APIKEY not set — skipping WhatsApp notification.");
+  try {
+    const res = await fetch(url, { method: "GET" });
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      console.error(`CallMeBot WhatsApp request failed for ${phone}:`, res.status, body);
+      return { error: true };
+    }
+    return { ok: true };
+  } catch (err) {
+    console.error(`CallMeBot WhatsApp request threw for ${phone}:`, err);
+    return { error: true };
+  }
+}
+
+export async function sendWhatsAppNotification({ name, email, phone, stage, message, source }) {
+  const recipients = [
+    { phone: process.env.WHATSAPP_NOTIFY_PHONE, key: process.env.WHATSAPP_APIKEY },
+    { phone: process.env.WHATSAPP_NOTIFY_PHONE_2, key: process.env.WHATSAPP_APIKEY_2 },
+  ].filter((r) => r.phone && r.key); // second recipient is optional
+
+  if (recipients.length === 0) {
+    console.error("No WhatsApp recipients configured — skipping notification.");
     return { skipped: true };
   }
 
@@ -39,22 +64,16 @@ export async function sendWhatsAppNotification({ name, email, phone, stage, mess
   if (phone) lines.push(`Phone: ${phone}`);
   if (stage) lines.push(`Stage: ${stage}`);
   if (message) lines.push(`Message: ${message}`);
-
   const text = lines.join("\n");
-  const url = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(
-    notifyPhone
-  )}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apiKey)}`;
 
-  try {
-    const res = await fetch(url, { method: "GET" });
-    if (!res.ok) {
-      const body = await res.text().catch(() => "");
-      console.error("CallMeBot WhatsApp request failed:", res.status, body);
-      return { error: true };
-    }
-    return { ok: true };
-  } catch (err) {
-    console.error("CallMeBot WhatsApp request threw:", err);
-    return { error: true };
+  // Sent one after another rather than in parallel — CallMeBot is a free
+  // community service and can be sensitive to bursts of simultaneous
+  // requests; two sequential calls a moment apart is safer than racing them.
+  const results = [];
+  for (const r of recipients) {
+    results.push(await sendToOne(r.phone, r.key, text));
   }
+
+  const anyOk = results.some((r) => r.ok);
+  return anyOk ? { ok: true } : { error: true };
 }

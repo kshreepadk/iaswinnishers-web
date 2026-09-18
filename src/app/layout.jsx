@@ -13,12 +13,56 @@ export const metadata = {
   },
   description:
     "IAS Winnishers pairs every UPSC aspirant with a dedicated personal coach — structured GS classes, answer-writing, test series, interview guidance and steady mentoring, from your first day to your winning finish.",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://iaswinnishers.com",
+    siteName: "IAS Winnishers",
+    title: "IAS Winnishers - Personalised UPSC Coaching",
+    description:
+      "One dedicated coach for every aspirant, from your first day to your winning finish.",
+    images: [{ url: "/logo.png", width: 619, height: 100, alt: "IAS Winnishers" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "IAS Winnishers - Personalised UPSC Coaching",
+    description:
+      "One dedicated coach for every aspirant, from your first day to your winning finish.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "IAS Winnishers",
+    description:
+      "Personalised UPSC and IAS coaching pairing every aspirant with a dedicated personal coach.",
+    url: "https://iaswinnishers.com",
+    logo: "https://iaswinnishers.com/logo.png",
+    telephone: "+91-98862-73325",
+    email: "vinayenterprising@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bengaluru",
+      addressRegion: "Karnataka",
+      addressCountry: "IN",
+    },
+    sameAs: [
+      "https://www.facebook.com/iaswinnisher/",
+      "https://www.instagram.com/iaswinnishers/",
+      "https://www.youtube.com/@vinaykumarr9273",
+    ],
+  };
+
   return (
     <html lang="en">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <div className="bg-coral-dark text-white text-sm">
           <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-3 px-6 py-2.5">
             <div className="flex flex-wrap items-center gap-5">

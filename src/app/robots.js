@@ -5,5 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/admin/", "/api/"],
     },
+    sitemap: "https://iaswinnishers.com/sitemap.xml",
   };
 }

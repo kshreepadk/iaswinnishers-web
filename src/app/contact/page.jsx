@@ -33,7 +33,7 @@ export default function ContactPage() {
             <div className="side-card">
               <h4 className="mb-3.5 font-display text-[15px] font-semibold">Reach us directly</h4>
               <ul className="flex flex-col gap-3 text-sm text-ink-2">
-                <li>+91 98862 73325 · +91 99165 27480</li>
+                <li>+91 98862 73325</li>
                 <li>vinayenterprising@gmail.com</li>
                 <li>Bengaluru, Karnataka</li>
               </ul>

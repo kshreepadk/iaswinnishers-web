@@ -237,7 +237,11 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {RESOURCES.map((r) => (
-              <div key={r.title} className="flex flex-col gap-3 rounded-lg2 border border-line bg-white p-8">
+              <Link
+                key={r.title}
+                href="/resources"
+                className="flex flex-col gap-3 rounded-lg2 border border-line bg-white p-8 transition-all hover:-translate-y-1.5 hover:shadow-soft"
+              >
                 <div className="flex h-[52px] w-[52px] items-center justify-center rounded-2xl bg-coral">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -245,7 +249,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-display text-[19px] font-semibold">{r.title}</h3>
                 <p className="text-sm text-ink-2">{r.body}</p>
-              </div>
+                <span className="mt-auto text-sm font-bold text-coral-dark">Get it →</span>
+              </Link>
             ))}
           </div>
           <div className="mt-9 text-center">
