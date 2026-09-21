@@ -42,7 +42,7 @@ const PROGRAMS = [
 
 const RESOURCES = [
   { title: "NCERT Booklist, Prioritized", body: "The exact NCERTs to read, and the order to read them in, for every GS subject." },
-  { title: "5 Years of PYQs, Subject-Wise", body: "Real UPSC GS1 questions from the last 5 years, split by subject — History, Polity, Economy, and more." },
+  { title: "5 Years of PYQs, Subject-Wise", body: "UPSC GS1 questions from the last 5 years, split by subject — History, Polity, Economy, and more." },
   { title: "One-Page UPSC Syllabus Map", body: "The entire GS syllabus laid out visually on a single page." },
 ];
 

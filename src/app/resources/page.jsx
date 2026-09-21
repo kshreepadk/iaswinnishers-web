@@ -26,7 +26,7 @@ const RESOURCES = [
   },
 ];
 
-// 5 years of real UPSC Prelims GS1 questions, split by subject so you can
+// 5 years of UPSC Prelims GS1 questions, split by subject so you can
 // download just the one you're currently revising instead of one giant file.
 const SUBJECT_PYQS = [
   { slug: "history", title: "History", file: "/resources/pyq-history.pdf" },
@@ -71,7 +71,7 @@ export default async function ResourcesPage() {
           <div className="mx-auto max-w-[680px] text-center">
             <span className="eyebrow justify-center">5 Years of PYQs</span>
             <h2 className="mt-3.5 font-display text-2xl font-semibold md:text-[30px]">
-              Real UPSC GS1 questions, by subject
+              UPSC GS1 questions, by subject
             </h2>
             <p className="mt-3.5 text-ink-2">
               The last 5 years of Prelims General Studies questions, split by
@@ -100,7 +100,7 @@ export default async function ResourcesPage() {
             <div className="mx-auto max-w-[680px] text-center">
               <span className="eyebrow justify-center">From Our Channel</span>
               <h2 className="mt-3.5 font-display text-2xl font-semibold md:text-[30px]">
-                Free videos to help you along the way
+                Videos to help you along the way
               </h2>
               <p className="mt-3.5 text-ink-2">
                 A few recent uploads from our YouTube channel — useful on
