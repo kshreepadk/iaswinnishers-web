@@ -42,7 +42,7 @@ const PROGRAMS = [
 
 const RESOURCES = [
   { title: "NCERT Booklist, Prioritized", body: "The exact NCERTs to read, and the order to read them in, for every GS subject." },
-  { title: "5 Years of PYQs, Topic-Wise", body: "Real UPSC questions from the last 5 years, organized by subject instead of by year." },
+  { title: "5 Years of PYQs, Subject-Wise", body: "Real UPSC GS1 questions from the last 5 years, split by subject — History, Polity, Economy, and more." },
   { title: "One-Page UPSC Syllabus Map", body: "The entire GS syllabus laid out visually on a single page." },
 ];
 
@@ -231,7 +231,7 @@ export default function HomePage() {
               Tools to help you get moving today
             </h2>
             <p className="mt-4 text-[16.5px] text-ink-2">
-              A booklist, 5 years of topic-wise PYQs, and a full syllabus map — built to help you make
+              A booklist, 5 years of subject-wise PYQs, and a full syllabus map — built to help you make
               progress right now, whether or not you ever join us.
             </p>
           </div>

@@ -8,8 +8,13 @@ import { sendWhatsAppNotification } from "@/lib/whatsapp";
 // sync with the RESOURCES array in src/app/resources/page.jsx.
 const RESOURCE_TITLES = {
   "ncert-booklist": "The NCERT Booklist, Prioritized",
-  "pyqs-topic-wise": "5 Years of PYQs, Topic-Wise",
   "syllabus-map": "The UPSC Syllabus, on One Page",
+  "pyq-history": "5 Years of PYQs — History",
+  "pyq-geography": "5 Years of PYQs — Geography",
+  "pyq-polity": "5 Years of PYQs — Polity",
+  "pyq-economy": "5 Years of PYQs — Economy",
+  "pyq-environment-ecology": "5 Years of PYQs — Environment & Ecology",
+  "pyq-science-technology": "5 Years of PYQs — Science & Technology",
 };
 
 // Very small, dependency-free email format check — good enough to catch
