@@ -2,7 +2,7 @@ import { getSupabaseServerClient } from "@/lib/supabaseServer";
 import LeadsTable from "@/components/admin/LeadsTable";
 import LogoutButton from "@/components/admin/LogoutButton";
 
-// Always fetch fresh from Supabase — this page should never show a
+// Always fetch fresh from Supabase, this page should never show a
 // cached/stale list of leads.
 export const dynamic = "force-dynamic";
 

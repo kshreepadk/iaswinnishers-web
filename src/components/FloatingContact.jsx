@@ -14,7 +14,7 @@ export default function FloatingContact() {
 
   return (
     <>
-      {/* Call — bottom-left */}
+      {/* Call, bottom-left */}
       <a
         href={`tel:${PHONE}`}
         aria-label="Call now"
@@ -25,7 +25,7 @@ export default function FloatingContact() {
         </svg>
       </a>
 
-      {/* WhatsApp — bottom-right */}
+      {/* WhatsApp, bottom-right */}
       <a
         href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
         target="_blank"

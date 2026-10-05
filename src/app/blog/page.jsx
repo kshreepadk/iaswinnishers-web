@@ -17,7 +17,7 @@ export default function BlogPage() {
         crumb="Blog"
         eyebrow="The IAS Winnishers Blog"
         title="Practical writing for a long, honest journey"
-        description="Strategy, answer writing, current affairs and the everyday realities of multi-year UPSC preparation — written to actually help, not to fill space."
+        description="Strategy, answer writing, current affairs and the everyday realities of multi-year UPSC preparation, written to actually help, not to fill space."
       />
 
       <section className="bg-white px-6 py-16">
@@ -45,7 +45,7 @@ export default function BlogPage() {
         <div className="mx-auto max-w-[640px]">
           <span className="eyebrow justify-center">Stay Updated</span>
           <h2 className="mt-3.5 font-display text-2xl font-semibold md:text-[30px]">Get one useful UPSC email a week</h2>
-          <p className="mt-3.5 text-ink-2">Strategy notes, current affairs digests and study tips — no noise, unsubscribe anytime.</p>
+          <p className="mt-3.5 text-ink-2">Strategy notes, current affairs digests and study tips, no noise, unsubscribe anytime.</p>
           <div className="mt-6 flex justify-center">
             <div className="w-full max-w-[440px]">
               <LeadForm buttonLabel="Subscribe" source="blog-newsletter" />

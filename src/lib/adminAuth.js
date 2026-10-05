@@ -1,5 +1,5 @@
 // Uses the Web Crypto API (crypto.subtle) deliberately, rather than
-// Node's built-in `crypto` module — this file is imported by both
+// Node's built-in `crypto` module, this file is imported by both
 // ordinary API routes (Node runtime) AND middleware.js (Edge runtime),
 // and Web Crypto is the one API that works in both.
 
@@ -10,7 +10,7 @@ async function getKey() {
   const secret = process.env.ADMIN_SESSION_SECRET;
   if (!secret) {
     throw new Error(
-      "ADMIN_SESSION_SECRET is not set. Add a long random string to .env.local (and to Vercel) — see .env.local.example."
+      "ADMIN_SESSION_SECRET is not set. Add a long random string to .env.local (and to Vercel), see .env.local.example."
     );
   }
   const enc = new TextEncoder();

@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }) {
           <aside className="flex flex-col gap-5">
             <div className="side-card">
               <h4 className="mb-3.5 font-display text-[15px] font-semibold">Free resources to get moving</h4>
-              <p className="mb-4 text-sm text-ink-2">An NCERT booklist, topic-mapped PYQs, and a full syllabus map — all free.</p>
+              <p className="mb-4 text-sm text-ink-2">An NCERT booklist, topic-mapped PYQs, and a full syllabus map, all free.</p>
               <Link href="/resources" className="btn btn-primary w-full !py-2.5 text-sm">Browse Free Resources</Link>
             </div>
             {post.sidebarCta && (

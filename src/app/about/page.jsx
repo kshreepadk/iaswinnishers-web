@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "About Us",
   description:
-    "Why IAS Winnishers exists, how our one-coach-per-aspirant model works, and the team guiding UPSC Civil Services aspirants through Prelims, Mains and Interview.",
+    "Why IAS Winnishers exists, how our one-coach-per-aspirant model works, and the founder guiding UPSC Civil Services aspirants through Prelims, Mains and Interview.",
   alternates: { canonical: "/about" },
 };
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
             </p>
             <p>
               Every year, thousands of capable aspirants start their UPSC
-              journey with energy — and lose it somewhere along the way. Not
+              journey with energy, and lose it somewhere along the way. Not
               because they lack ability, but because the preparation itself is
               exhausting: scattered guidance, generic batches, and no one
               tracking how they&apos;re actually doing as a person, not just as
@@ -46,8 +46,8 @@ export default function AboutPage() {
 
             <h3>Why &quot;Winnishers&quot;?</h3>
             <p>
-              The name is a mash-up of &quot;Winning&quot; and &quot;Finish&quot;
-              — the promise we make to every aspirant who walks through our
+              The name is a mash-up of &quot;Winning&quot; and &quot;Finish&quot;,
+              the promise we make to every aspirant who walks through our
               doors: not just to win, but to finish what they started, all the
               way to the end. It&apos;s not enough to be sharp on exam day; you
               need to be the kind of aspirant who keeps showing up, stage after
@@ -55,7 +55,7 @@ export default function AboutPage() {
             </p>
             <p>
               Founded in Bengaluru, IAS Winnishers grew out of one-on-one
-              mentorship work — long conversations, weekly test discussions,
+              mentorship work: long conversations, weekly test discussions,
               and interview coaching that treated each aspirant as a whole
               person, not a batch number. That approach is now the foundation
               of everything we do.
@@ -64,26 +64,26 @@ export default function AboutPage() {
             <h2>How we coach differently</h2>
             <p>
               From the day you join, one coach is responsible for your
-              progress — your weekly plan, your answer sheets, your doubts, and
+              progress: your weekly plan, your answer sheets, your doubts, and
               your morale. They adjust the plan as your strengths change, so
               you&apos;re never following a template built for someone else.
             </p>
             <ul>
               <li>Weekly one-on-one review with your coach</li>
-              <li>A living, adjustable study plan — never fixed in stone</li>
+              <li>A living, adjustable study plan, never fixed in stone</li>
               <li>Confidence and wellbeing check-ins woven into every coaching cycle</li>
             </ul>
 
             <h3>What we believe</h3>
             <ul>
-              <li>Every aspirant prepares differently — a good coach adjusts the plan, not the aspirant.</li>
+              <li>Every aspirant prepares differently; a good coach adjusts the plan, not the aspirant.</li>
               <li>Confidence and clarity are exam skills, not soft extras.</li>
               <li>Consistent, honest feedback beats generic study material every time.</li>
             </ul>
 
             <h2>Our approach to each stage</h2>
             <h3>Foundation to Winning Finish Program</h3>
-            <p>NCERT-based concept building and a syllabus map tailored to how much time you actually have — carried through every stage in one continuous journey.</p>
+            <p>NCERT-based concept building and a syllabus map tailored to how much time you actually have, carried through every stage in one continuous journey.</p>
             <h3>Prelims Mastery</h3>
             <p>Timed test series that mirror the real exam, followed by error analysis that tells you exactly what to fix.</p>
             <h3>Mains Mastery</h3>
@@ -119,28 +119,50 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper-2 px-6 py-16">
+      <section id="founder" className="bg-paper-2 px-6 py-16">
         <div className="mx-auto max-w-[1200px] text-center">
-          <span className="eyebrow justify-center">The Team</span>
+          <span className="eyebrow justify-center">The Founder</span>
           <h2 className="mt-3.5 font-display text-3xl font-semibold md:text-[42px]">
-            Coaches who stay with you, not just teach at you
+            Meet the founder
           </h2>
-          <div className="mt-10 flex justify-center">
-            <div className="card max-w-[320px] text-center">
-              <Image
-                src="/team/vinay-kumar.jpg"
-                alt="Vinay Kumar R"
-                width={176}
-                height={176}
-                className="mx-auto mb-4 h-[88px] w-[88px] rounded-full object-cover"
-              />
-              <h3 className="font-display text-lg font-semibold">Vinay Kumar R</h3>
-              <p className="mb-2.5 text-[13.5px] font-bold text-coral-dark">Founder &amp; Lead Coach</p>
-              <p className="text-sm text-ink-2">
-                Guides Mains answer writing and interview preparation with a
-                structured, one-on-one coaching style built over years of
-                mentoring aspirants.
+          <div className="mx-auto mt-10 grid max-w-[1000px] items-start gap-8 rounded-lg2 border border-line bg-white p-7 text-left md:grid-cols-[240px_1fr] md:gap-10 md:p-10">
+            <Image
+              src="/team/vinay-kumar.jpg"
+              alt="Vinay Kumar Rajgopal"
+              width={480}
+              height={480}
+              className="mx-auto h-[200px] w-[200px] rounded-2xl object-cover md:h-[240px] md:w-[240px]"
+            />
+            <div>
+              <h3 className="font-display text-2xl font-semibold">Vinay Kumar Rajgopal</h3>
+              <p className="mb-4 mt-1 text-[13.5px] font-bold text-coral-dark">
+                Founder &amp; Academic Director, IAS Winnishers
               </p>
+              <div className="flex flex-col gap-3.5 text-[15px] leading-relaxed text-ink-2">
+                <p>
+                  Vinay Kumar Rajgopal is an Author, Speaker and High impact
+                  personal transformation coach.
+                </p>
+                <p>
+                  As a Master NLP practitioner and a Peak Performance IAS Mentor
+                  and Coach, his expertise stems out of his 21 years of
+                  experience of guiding and training thousands of IAS Aspirants
+                  to excellence in civil service exam. His mission is to build
+                  IAS aspirants into conscious, knowledgeable and principle
+                  centered human beings who can be great assets to the pool of
+                  country’s top notch administrative leadership. As the founder
+                  and academic director of IAS Winnishers, he is engaged in
+                  nurturing brilliant pedagogy and competent coaches who
+                  facilitate the preparation of students in a highly
+                  methodical and organic way.
+                </p>
+                <p>
+                  As a soft skill trainer for more than a decade now and NLP
+                  coach with international exposure along with his ongoing
+                  research on neuroscience and positive psychology, he is an
+                  interview guidance specialist.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -153,7 +175,7 @@ export default function AboutPage() {
               <h2 className="font-display text-2xl font-semibold text-ink md:text-[30px]">
                 Curious how a coach would work with you specifically?
               </h2>
-              <p className="mt-2 text-ink-2">Book a free counselling call and find out — no obligation.</p>
+              <p className="mt-2 text-ink-2">Book a free counselling call and find out. No obligation.</p>
             </div>
             <Link href="/contact#counselling" className="btn btn-primary">Book Free Counselling</Link>
           </div>

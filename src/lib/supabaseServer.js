@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 // This client uses the SERVICE ROLE key, which has full database access
 // and bypasses row-level security. It must NEVER be imported into a
-// "use client" component or anything that ships to the browser — only
+// "use client" component or anything that ships to the browser, only
 // into API route handlers (src/app/api/**/route.js), which run on the
 // server and are never sent to visitors.
 export function getSupabaseServerClient() {

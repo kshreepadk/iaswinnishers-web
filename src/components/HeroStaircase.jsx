@@ -13,7 +13,7 @@ export default function HeroStaircase() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // A tiny delay so the very first paint isn't mid-animation — feels
+    // A tiny delay so the very first paint isn't mid-animation, feels
     // more deliberate than firing the instant the component exists.
     const t = setTimeout(() => setMounted(true), 150);
     return () => clearTimeout(t);
@@ -25,7 +25,7 @@ export default function HeroStaircase() {
         viewBox="0 0 480 380"
         className="w-full"
         role="img"
-        aria-label="Four rising steps — Foundation, Prelims, Mains, Interview — leading to a flag at the winning finish"
+        aria-label="Four rising steps (Foundation, Prelims, Mains, Interview) leading to a flag at the winning finish"
       >
         <line x1="20" y1="330" x2="460" y2="330" stroke="#E7D9C3" strokeWidth="2" />
 

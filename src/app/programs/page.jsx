@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "UPSC Coaching Programs",
   description:
-    "Explore IAS Winnishers' UPSC coaching programs — the Foundation to Winning Finish Program, Prelims Mastery, Mains Mastery, Geography/Economy/Current Affairs Made Easy, Interview Guidance, and our Reassess & Restart Program for repeat attempts — each with a dedicated personal coach.",
+    "Explore IAS Winnishers' UPSC coaching programs: the Foundation to Winning Finish Program, Prelims Mastery, Mains Mastery, Geography/Economy/Current Affairs Made Easy, Interview Guidance, and our Reassess & Restart Program for repeat attempts, each with a dedicated personal coach.",
   alternates: { canonical: "/programs" },
 };
 
@@ -55,7 +55,7 @@ export default function ProgramsPage() {
           <>
             It&apos;s our most complete offering, and the name says exactly
             what it is: an 18–22 month journey that walks with you from your
-            <strong> first NCERT to your final interview</strong> — Prelims,
+            <strong> first NCERT to your final interview</strong>: Prelims,
             Mains and Interview, all in one continuous program with one coach
             throughout.
           </>
@@ -70,7 +70,7 @@ export default function ProgramsPage() {
           <>
             <span className="mb-2 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase text-leaf">Batch forming now</span>
             <h3 className="mb-1.5 font-display text-base font-semibold">Who it&apos;s for</h3>
-            <p className="mb-4 text-sm text-ink-2">One continuous, fully supported journey from day one to interview day — without switching programs or coaches.</p>
+            <p className="mb-4 text-sm text-ink-2">One continuous, fully supported journey from day one to interview day, without switching programs or coaches.</p>
             <h3 className="mb-1.5 font-display text-base font-semibold">Duration</h3>
             <p className="text-sm text-ink-2">18–22 months, personalised to your starting point.</p>
           </>
@@ -82,9 +82,9 @@ export default function ProgramsPage() {
         bg="bg-white"
         eyebrow="For Repeat Attempts"
         title="Reassess & Restart Program"
-        description="Not clearing an attempt doesn't mean starting over from zero — it means figuring out, honestly, what actually needs to change. This program is for aspirants regrouping after a result, especially the stretch right after Prelims results in June, who need a coach to help them see clearly where to restart rather than guessing on their own."
+        description="Not clearing an attempt doesn't mean starting over from zero; it means figuring out, honestly, what actually needs to change. This program is for aspirants regrouping after a result, especially the stretch right after Prelims results in June, who need a coach to help them see clearly where to restart rather than guessing on their own."
         bullets={[
-          "An honest review of your last attempt — what worked, what didn't, and why",
+          "An honest review of your last attempt: what worked, what didn't, and why",
           "A fresh study plan built from where you actually are, not from scratch",
           "Help deciding whether to revisit Foundation, focus on Prelims, or move straight to Mains prep",
           "The same steady, one-on-one coaching model as every other program here",
@@ -93,9 +93,9 @@ export default function ProgramsPage() {
           <>
             <span className="mb-2 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase text-leaf">Rolling admission</span>
             <h3 className="mb-1.5 font-display text-base font-semibold">Who it&apos;s for</h3>
-            <p className="mb-4 text-sm text-ink-2">Aspirants who've attempted before and need an honest, structured reset — not another generic restart.</p>
+            <p className="mb-4 text-sm text-ink-2">Aspirants who've attempted before and need an honest, structured reset, not another generic restart.</p>
             <h3 className="mb-1.5 font-display text-base font-semibold">Best time to start</h3>
-            <p className="text-sm text-ink-2">Right after any result — Prelims, Mains, or Interview — while it&apos;s still fresh.</p>
+            <p className="text-sm text-ink-2">Right after any result (Prelims, Mains, or Interview) while it&apos;s still fresh.</p>
           </>
         }
       />
@@ -129,18 +129,18 @@ export default function ProgramsPage() {
         bg="bg-white"
         eyebrow="Descriptive Round · Mains"
         title="Mains Mastery Program"
-        description="Mains is won or lost on the page. You'll write weekly answers under exam conditions and get detailed, line-by-line feedback from your coach — across all four GS papers, the Essay paper, and your optional subject."
+        description="Mains is won or lost on the page. You'll write weekly answers under exam conditions and get detailed, line-by-line feedback from your coach, across all four GS papers, the Essay paper, and your optional subject."
         bullets={[
           "Weekly GS answer writing across GS I–IV",
           "Essay practice with structured feedback",
-          "Dedicated optional subject coaching — Geography, Polity, and Psychology are especially well covered",
+          "Dedicated optional subject coaching: Geography, Polity, and Psychology are especially well covered",
           "Full-length Mains test series closer to the exam",
         ]}
         side={
           <>
             <span className="mb-2 inline-block rounded-full bg-leaf-light px-3 py-1 text-[11.5px] font-bold uppercase text-leaf">Rolling admission</span>
             <h3 className="mb-1.5 font-display text-base font-semibold">Optional subjects offered</h3>
-            <p className="mb-4 text-sm text-ink-2">Geography, Polity, and Psychology are covered in depth — ask your coach if yours isn&apos;t listed.</p>
+            <p className="mb-4 text-sm text-ink-2">Geography, Polity, and Psychology are covered in depth. Ask your coach if yours isn&apos;t listed.</p>
             <h3 className="mb-1.5 font-display text-base font-semibold">Coach feedback turnaround</h3>
             <p className="text-sm text-ink-2">[Add your turnaround time, e.g. within 48 hours]</p>
           </>
@@ -154,7 +154,7 @@ export default function ProgramsPage() {
         title="Geography Made Easy Program"
         description={
           <>
-            Geography intimidates a lot of aspirants — this program is built to
+            Geography intimidates a lot of aspirants. This program is built to
             fix that. Held annually in the <strong>last week of December</strong>,
             we break the subject down with maps, diagrams and memory techniques
             instead of dense text.
@@ -213,7 +213,7 @@ export default function ProgramsPage() {
         bg="bg-paper-2"
         eyebrow="Seasonal · Subject Program"
         title="Current Affairs Made Easy Program"
-        description="Current affairs is the part of the syllabus that never stops growing — so we make it manageable instead of overwhelming. Offered in structured seasonal batches through the year, with concise briefings and static-syllabus linkages."
+        description="Current affairs is the part of the syllabus that never stops growing, so we make it manageable instead of overwhelming. Offered in structured seasonal batches through the year, with concise briefings and static-syllabus linkages."
         bullets={[
           "Concise current affairs briefings, kept short and exam-focused",
           "Compilations for structured revision",
@@ -226,7 +226,7 @@ export default function ProgramsPage() {
             <h3 className="mb-1.5 font-display text-base font-semibold">Format</h3>
             <p className="mb-4 text-sm text-ink-2">Digestible briefings and a compilation covering the season, with retention-focused quizzes.</p>
             <h3 className="mb-1.5 font-display text-base font-semibold">Best paired with</h3>
-            <p className="text-sm text-ink-2">Every other program — it runs alongside your entire preparation.</p>
+            <p className="text-sm text-ink-2">Every other program, since it runs alongside your entire preparation.</p>
           </>
         }
       />
@@ -237,7 +237,7 @@ export default function ProgramsPage() {
         bg="bg-white"
         eyebrow="Personality Test · Interview"
         title="Interview Guidance"
-        description="The interview tests composure as much as knowledge. We build that composure first — through one-on-one conversations grounded in your own DAF and background — rather than dropping you into an unfamiliar panel and hoping confidence follows."
+        description="The interview tests composure as much as knowledge. We build that composure first, through one-on-one conversations grounded in your own DAF and background, rather than dropping you into an unfamiliar panel and hoping confidence follows."
         bullets={[
           "One-on-one DAF review, question by question, with your coach",
           "Steady, ongoing confidence-building conversations",
@@ -262,7 +262,7 @@ export default function ProgramsPage() {
               <h2 className="font-display text-2xl font-semibold text-ink md:text-[30px]">
                 Not sure which program fits you?
               </h2>
-              <p className="mt-2 text-ink-2">Book a free counselling call — a coach will help you pick the right starting point.</p>
+              <p className="mt-2 text-ink-2">Book a free counselling call, and a coach will help you pick the right starting point.</p>
             </div>
             <Link href="/contact#counselling" className="btn btn-primary">Book Free Counselling</Link>
           </div>

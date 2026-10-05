@@ -7,7 +7,7 @@ import { useRef, useState, useCallback } from "react";
  * live dot indicators. Deliberately kept completely separate from the
  * desktop grid (rendered alongside it, hidden/shown via the `hiddenAbove`
  * breakpoint) rather than trying to make one container behave as both a
- * grid and a carousel — that combined approach is what looked broken
+ * grid and a carousel, that combined approach is what looked broken
  * before.
  */
 export default function MobileCarousel({ items, itemWidthClass = "w-[82%]", hiddenAbove = "sm", className = "" }) {

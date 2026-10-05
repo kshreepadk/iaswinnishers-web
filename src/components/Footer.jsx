@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-[32ch] text-sm leading-relaxed">
-              Personalised UPSC coaching from Bengaluru — one dedicated coach for
+              Personalised UPSC coaching from Bengaluru: one dedicated coach for
               every aspirant, from your first day to your winning finish.
             </p>
           </div>

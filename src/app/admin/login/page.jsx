@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-paper px-6">
       <div className="w-full max-w-[380px] rounded-lg2 border border-line bg-white p-8">
         <h1 className="mb-1 font-display text-xl font-semibold text-ink">Admin Login</h1>
-        <p className="mb-6 text-sm text-ink-2">IAS Winnishers — Leads Dashboard</p>
+        <p className="mb-6 text-sm text-ink-2">IAS Winnishers: Leads Dashboard</p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
             <label className="field-label" htmlFor="password">Password</label>

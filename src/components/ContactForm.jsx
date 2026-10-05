@@ -51,7 +51,7 @@ export default function ContactForm() {
     return (
       <div className="rounded-md2 border border-leaf-light bg-leaf-light p-6 text-center">
         <Confetti fire={celebrate} onDone={() => setCelebrate(false)} />
-        <p className="font-display text-lg font-semibold text-ink">Thanks — you&apos;re booked in!</p>
+        <p className="font-display text-lg font-semibold text-ink">Thanks, you&apos;re booked in!</p>
         <p className="mt-2 text-sm text-ink-2">
           A coach will reach out shortly to confirm a time for your call.
         </p>
@@ -61,7 +61,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
-      {/* Honeypot field — hidden from real users via CSS, bots often fill it in anyway */}
+      {/* Honeypot field, hidden from real users via CSS, bots often fill it in anyway */}
       <input
         type="text"
         name="website"

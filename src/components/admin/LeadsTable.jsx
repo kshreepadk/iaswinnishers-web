@@ -22,7 +22,7 @@ function formatDate(iso) {
 }
 
 function friendlySource(source) {
-  if (!source) return "—";
+  if (!source) return "-";
   if (source.startsWith("resources-")) {
     return "Resource: " + source.replace("resources-", "").replace(/-/g, " ");
   }
@@ -104,7 +104,7 @@ export default function LeadsTable({ initialLeads }) {
                   {lead.phone && <div>{lead.phone}</div>}
                 </td>
                 <td className="px-4 py-3 text-ink-2">{friendlySource(lead.source)}</td>
-                <td className="px-4 py-3 text-ink-2">{lead.stage || "—"}</td>
+                <td className="px-4 py-3 text-ink-2">{lead.stage || "-"}</td>
                 <td className="px-4 py-3">
                   <select
                     value={lead.status || "new"}

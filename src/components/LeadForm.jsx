@@ -41,7 +41,7 @@ export default function LeadForm({ buttonLabel = "Get it now", source = "unknown
       form.reset();
 
       // Auto-trigger the download the moment the lead is saved, so there's
-      // no extra click needed — the visible button below is a fallback in
+      // no extra click needed, the visible button below is a fallback in
       // case the browser blocks the automatic click.
       if (downloadUrl) {
         setTimeout(() => downloadLinkRef.current?.click(), 150);
@@ -57,7 +57,7 @@ export default function LeadForm({ buttonLabel = "Get it now", source = "unknown
       return (
         <div className="mt-1">
           <Confetti fire={celebrate} onDone={() => setCelebrate(false)} />
-          <p className="text-sm font-semibold text-leaf">Thanks — you&apos;re on the list!</p>
+          <p className="text-sm font-semibold text-leaf">Thanks, you&apos;re on the list!</p>
         </div>
       );
     }

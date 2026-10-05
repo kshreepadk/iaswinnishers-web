@@ -22,7 +22,7 @@ export default function Header() {
         <Link href="/" aria-label="IAS Winnishers home" className="flex items-center">
           <Image
             src="/logo.png"
-            alt="IAS Winnishers — An Institute for Winning Finish in IAS Exam"
+            alt="IAS Winnishers: An Institute for Winning Finish in IAS Exam"
             width={619}
             height={100}
             priority
@@ -30,7 +30,7 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop nav — hidden below md, no interactivity needed so no JS required for this part */}
+        {/* Desktop nav, hidden below md, no interactivity needed so no JS required for this part */}
         <ul className="hidden md:flex md:flex-1 md:items-center md:justify-evenly md:gap-8">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
@@ -52,7 +52,7 @@ export default function Header() {
             Contact
           </Link>
 
-          {/* Hamburger button — only visible below md */}
+          {/* Hamburger button, only visible below md */}
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -70,7 +70,7 @@ export default function Header() {
       {/*
         Mobile drawer + backdrop.
         Built with standard Tailwind transform utilities (translate-x-full / translate-x-0)
-        instead of hand-written inset/transform CSS — this is the exact pattern that avoids
+        instead of hand-written inset/transform CSS, this is the exact pattern that avoids
         the bugs we hit in the old hand-rolled version (backdrop-filter breaking fixed
         positioning, `inset` shorthand not resolving reliably). React conditionally renders
         the backdrop entirely rather than toggling opacity, so there's no invisible

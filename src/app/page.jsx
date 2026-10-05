@@ -16,7 +16,7 @@ const FEATURES = [
   },
   {
     title: "Structured, staged learning",
-    body: "Foundation, Prelims, Mains and Interview each have a clear plan — you always know what to study next and why. We call our way of learning ORGANIC and ORGANISED.",
+    body: "Foundation, Prelims, Mains and Interview each have a clear plan, so you always know what to study next and why. We call our way of learning ORGANIC and ORGANISED.",
   },
   {
     title: "Confidence & wellbeing built in",
@@ -27,30 +27,30 @@ const FEATURES = [
 const JOURNEY = [
   { n: "1", title: "Foundation Mastery", body: "NCERT base-building, syllabus mapping and a personalised coaching plan and expansion of horizons of your knowledge so that you become that well informed and educated person that UPSC aspires to recruit." },
   { n: "2", title: "Prelims Mastery", body: "Conceptual excellence, current affairs mastery and weekly tests which we proudly call individual excellence challenge." },
-  { n: "3", title: "Mains Mastery", body: "Daily answer writing for general studies, optional subject depth, and essay practice — all with detailed review session." },
+  { n: "3", title: "Mains Mastery", body: "Daily answer writing for general studies, optional subject depth, and essay practice, all with detailed review session." },
   { n: "4", title: "Interview Mastery", body: "Comprehensive one-on-one DAF review, confidence-building conversations, and high performance coaching." },
-  { n: "🏁", title: "Winning Finish", body: "You walk in prepared and reassured of yourself and experience its natural consequence — success in the civil service exam." },
+  { n: "🏁", title: "Winning Finish", body: "You walk in prepared and reassured of yourself and experience its natural consequence: success in the civil service exam." },
 ];
 
 const PROGRAMS = [
-  { tag: "18–22 Months", title: "Foundation to Winning Finish Program", body: "One continuous journey, from your first NCERT to your final interview — the same coach with you at every single stage.", href: "/programs#foundation-to-finish" },
-  { tag: "For Repeat Attempts", title: "Reassess & Restart Program", body: "Didn't clear this attempt? A coach helps you honestly assess what happened and rebuild a plan from exactly where you actually are — not from scratch.", href: "/programs#reassess-restart" },
+  { tag: "18–22 Months", title: "Foundation to Winning Finish Program", body: "One continuous journey, from your first NCERT to your final interview, the same coach with you at every single stage.", href: "/programs#foundation-to-finish" },
+  { tag: "For Repeat Attempts", title: "Reassess & Restart Program", body: "Didn't clear this attempt? A coach helps you honestly assess what happened and rebuild a plan from exactly where you actually are, not from scratch.", href: "/programs#reassess-restart" },
   { tag: "Objective Round", title: "Prelims Mastery Program", body: "Timed, full-length mock tests on the real exam pattern, with detailed error analysis after every attempt.", href: "/programs#prelims-mastery" },
-  { tag: "Descriptive Round", title: "Mains Mastery Program", body: "Weekly answer writing across all GS papers, Essay, and your optional subject — Geography, Polity and Psychology especially well covered.", href: "/programs#mains-mastery" },
+  { tag: "Descriptive Round", title: "Mains Mastery Program", body: "Weekly answer writing across all GS papers, Essay, and your optional subject (Geography, Polity and Psychology especially well covered).", href: "/programs#mains-mastery" },
   { tag: "Personality Test", title: "Interview Guidance", body: "One-on-one DAF review, personality-test preparation, and steady confidence coaching before the big day.", href: "/programs#interview" },
 ];
 
 const RESOURCES = [
   { title: "NCERT Booklist, Prioritized", body: "The exact NCERTs to read, and the order to read them in, for every GS subject." },
-  { title: "5 Years of PYQs, Subject-Wise", body: "UPSC GS1 questions from the last 5 years, split by subject — History, Polity, Economy, and more." },
+  { title: "5 Years of PYQs, Subject-Wise", body: "UPSC GS1 questions from the last 5 years, split by subject: History, Polity, Economy, and more." },
   { title: "One-Page UPSC Syllabus Map", body: "The entire GS syllabus laid out visually on a single page." },
 ];
 
 const TESTIMONIALS = [
-  { photo: "/testimonials/akash-shankar.jpg", name: "Dr. Akash Shankar, IAS", program: "Interview Guidance", quote: "My coach helped me build real clarity before the interview — patient, structured conversations that made me feel prepared instead of anxious on the actual day." },
+  { photo: "/testimonials/akash-shankar.jpg", name: "Dr. Akash Shankar, IAS", program: "Interview Guidance", quote: "My coach helped me build real clarity before the interview: patient, structured conversations that made me feel prepared instead of anxious on the actual day." },
   { photo: "/testimonials/shiva-shankar.jpg", name: "Shiva Shankar E, IFS", program: "Mains Test Series", quote: "Weekly tests with detailed, honest feedback made all the difference. Preparing here felt systematic rather than scattered across ten different sources." },
-  { photo: "/testimonials/sandesh-nayak.jpg", name: "Sandesh Nayak, IAS", program: "Foundation to Winning Finish Program", quote: "My coach kept me engaged with exam-oriented questions even outside class hours — lively, energetic teaching that never let my momentum drop." },
-  { photo: "/testimonials/radhika-g.jpg", name: "Radhika G, IPS", program: "Prelims Mastery Program", quote: "The test series felt exactly like the real exam, and the error analysis after every attempt told me precisely what to fix — nothing vague, always specific." },
+  { photo: "/testimonials/sandesh-nayak.jpg", name: "Sandesh Nayak, IAS", program: "Foundation to Winning Finish Program", quote: "My coach kept me engaged with exam-oriented questions even outside class hours: lively, energetic teaching that never let my momentum drop." },
+  { photo: "/testimonials/radhika-g.jpg", name: "Radhika G, IPS", program: "Prelims Mastery Program", quote: "The test series felt exactly like the real exam, and the error analysis after every attempt told me precisely what to fix: nothing vague, always specific." },
 ];
 
 export default function HomePage() {
@@ -77,7 +77,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Animated staircase illustration — steps rise into place on load */}
+          {/* Animated staircase illustration, steps rise into place on load */}
           <div className="self-start md:mt-8">
             <HeroStaircase />
           </div>
@@ -175,14 +175,14 @@ export default function HomePage() {
             A coach who takes up your responsibility head on
           </h2>
           <p className="mt-5 text-[16.5px] text-ink-2">
-            From the day you join, one coach is responsible for your progress
-            — your weekly plan, your answer writing, your doubts, and most
+            From the day you join, one coach is responsible for your progress:
+            your weekly plan, your answer writing, your doubts, and most
             importantly your enthusiasm and morale. They adjust the plan as
             your strengths change, so you&apos;re never following a template
             built for someone else.
           </p>
-          <Link href="/about" className="btn btn-primary mt-7">
-            Meet the Coaching Team
+          <Link href="/about#founder" className="btn btn-primary mt-7">
+            Meet the Founder
           </Link>
         </div>
       </section>
@@ -231,7 +231,7 @@ export default function HomePage() {
               Tools to help you get moving today
             </h2>
             <p className="mt-4 text-[16.5px] text-ink-2">
-              A booklist, 5 years of subject-wise PYQs, and a full syllabus map — built to help you make
+              A booklist, 5 years of subject-wise PYQs, and a full syllabus map, built to help you make
               progress right now, whether or not you ever join us.
             </p>
           </div>
@@ -303,7 +303,7 @@ export default function HomePage() {
                 Ready to meet your coach?
               </h2>
               <p className="mt-2.5 max-w-[460px] text-white/70">
-                A short, honest conversation — where you stand, what's realistic,
+                A short, honest conversation: where you stand, what's realistic,
                 and what your first month could look like.
               </p>
             </div>

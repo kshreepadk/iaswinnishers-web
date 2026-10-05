@@ -20,7 +20,7 @@ export default function CounsellingPopup() {
   useEffect(() => {
     if (suppressed) return;
 
-    // Already shown once this browser session — don't show it again on
+    // Already shown once this browser session, don't show it again on
     // every page navigation, that would just be annoying.
     if (typeof window !== "undefined" && sessionStorage.getItem(SESSION_KEY)) {
       return;

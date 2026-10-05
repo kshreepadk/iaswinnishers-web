@@ -7,7 +7,7 @@ export async function POST(request) {
 
   if (!process.env.ADMIN_PASSWORD) {
     return NextResponse.json(
-      { error: "Admin login isn't configured yet — set ADMIN_PASSWORD in your environment." },
+      { error: "Admin login isn't configured yet. Set ADMIN_PASSWORD in your environment." },
       { status: 500 }
     );
   }

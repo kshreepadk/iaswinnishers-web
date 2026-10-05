@@ -7,7 +7,7 @@ import { getLatestVideos, YOUTUBE_CHANNEL_URL } from "@/lib/youtube";
 export const metadata = {
   title: "Free UPSC Resources | NCERT Booklist, Subject-Wise PYQs & Syllabus Map",
   description:
-    "Free UPSC resources from IAS Winnishers — a prioritized NCERT booklist, 5 years of subject-wise PYQs across GS1, and a full syllabus map. No cost, no obligation.",
+    "Free UPSC resources from IAS Winnishers: a prioritized NCERT booklist, 5 years of subject-wise PYQs across GS1, and a full syllabus map. No cost, no obligation.",
   alternates: { canonical: "/resources" },
 };
 
@@ -15,7 +15,7 @@ const RESOURCES = [
   {
     slug: "ncert-booklist",
     title: "NCERT Booklist, Prioritized",
-    body: "The exact NCERTs to read, and the order to read them in, for every GS subject — no more guessing where to start.",
+    body: "The exact NCERTs to read, and the order to read them in, for every GS subject. No more guessing where to start.",
     file: "/resources/ncert-booklist.pdf",
   },
   {
@@ -46,7 +46,7 @@ export default async function ResourcesPage() {
         center
         eyebrow="Take Your Next Step"
         title="Tools to help you get moving today"
-        description="A booklist, a full syllabus map, and 5 years of subject-wise PYQs — built to help you make progress right now, whether or not you ever join us."
+        description="A booklist, a full syllabus map, and 5 years of subject-wise PYQs, built to help you make progress right now, whether or not you ever join us."
       />
 
       <section className="bg-white px-6 py-16">
@@ -75,7 +75,7 @@ export default async function ResourcesPage() {
             </h2>
             <p className="mt-3.5 text-ink-2">
               The last 5 years of Prelims General Studies questions, split by
-              subject — download just the one you&apos;re revising right now.
+              subject. Download just the one you&apos;re revising right now.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,7 +103,7 @@ export default async function ResourcesPage() {
                 Videos to help you along the way
               </h2>
               <p className="mt-3.5 text-ink-2">
-                A few recent uploads from our YouTube channel — useful on
+                A few recent uploads from our YouTube channel, useful on
                 their own, whether or not you ever join us.
               </p>
             </div>
@@ -133,7 +133,7 @@ export default async function ResourcesPage() {
           <p className="mt-3.5 text-[16.5px] text-white/70">
             Downloads are a good start, but they can only tell you so much. A
             career counselling conversation looks at your specific background,
-            timeline, and options — UPSC and beyond.
+            timeline, and options (UPSC and beyond).
           </p>
           <Link href="/career-counselling" className="btn mt-7 bg-marigold text-ink hover:bg-marigold-dark">
             Start Your Career Counselling Conversation

@@ -1,6 +1,6 @@
 const CHANNEL_ID = "UCoiYa1s9a9RBuIEEqugWIMA"; // @vinaykumarr9273
 
-// Uses YouTube's public RSS feed instead of the YouTube Data API — no API
+// Uses YouTube's public RSS feed instead of the YouTube Data API, no API
 // key or Google Cloud project needed, and no usage quota to worry about.
 // Cached for an hour (see `next: { revalidate }` below) so we're not
 // re-fetching on every single page load.
@@ -27,7 +27,7 @@ export async function getLatestVideos(limit = 3) {
       })
       .filter(Boolean);
   } catch {
-    // If YouTube is unreachable or the feed shape changes, fail quietly —
+    // If YouTube is unreachable or the feed shape changes, fail quietly,
     // the section that calls this just renders nothing rather than crashing
     // the whole page.
     return [];

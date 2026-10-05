@@ -9,15 +9,15 @@ import { sendWhatsAppNotification } from "@/lib/whatsapp";
 const RESOURCE_TITLES = {
   "ncert-booklist": "The NCERT Booklist, Prioritized",
   "syllabus-map": "The UPSC Syllabus, on One Page",
-  "pyq-history": "5 Years of PYQs — History",
-  "pyq-geography": "5 Years of PYQs — Geography",
-  "pyq-polity": "5 Years of PYQs — Polity",
-  "pyq-economy": "5 Years of PYQs — Economy",
-  "pyq-environment-ecology": "5 Years of PYQs — Environment & Ecology",
-  "pyq-science-technology": "5 Years of PYQs — Science & Technology",
+  "pyq-history": "5 Years of PYQs: History",
+  "pyq-geography": "5 Years of PYQs: Geography",
+  "pyq-polity": "5 Years of PYQs: Polity",
+  "pyq-economy": "5 Years of PYQs: Economy",
+  "pyq-environment-ecology": "5 Years of PYQs: Environment & Ecology",
+  "pyq-science-technology": "5 Years of PYQs: Science & Technology",
 };
 
-// Very small, dependency-free email format check — good enough to catch
+// Very small, dependency-free email format check, good enough to catch
 // obvious mistakes without pulling in a validation library for one field.
 function isValidEmail(value) {
   return typeof value === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -38,7 +38,7 @@ export async function POST(request) {
     stage,
     message,
     source, // e.g. "contact-form", "resources-ncert-booklist", "blog-newsletter"
-    website, // honeypot field — real users never fill this in; bots often do
+    website, // honeypot field, real users never fill this in; bots often do
   } = body || {};
 
   // Honeypot spam check: if this hidden field has anything in it, silently
@@ -73,12 +73,12 @@ export async function POST(request) {
       return NextResponse.json({ error: "Something went wrong saving your details. Please try again." }, { status: 500 });
     }
 
-    // WhatsApp notification to you (the site owner) — for every form
+    // WhatsApp notification to you (the site owner), for every form
     // submission, not just resource downloads. Awaited for the same
     // reliability reason as the thank-you email below: serverless
     // functions can be frozen right after the response is sent, which
     // would silently kill an un-awaited request mid-flight. A failed
-    // notification never blocks or fails the response — the lead is
+    // notification never blocks or fails the response, the lead is
     // already safely saved regardless.
     try {
       await sendWhatsAppNotification({ name, email, phone, stage, message, source });
@@ -87,12 +87,12 @@ export async function POST(request) {
     }
 
     // Resource downloads happen instantly on the page itself (see
-    // LeadForm.jsx) — but for resource requests specifically (not the
+    // LeadForm.jsx), but for resource requests specifically (not the
     // Contact form or newsletter), we also send a short thank-you email
     // with how to reach us. This is awaited (not fire-and-forget) because
     // serverless functions can be frozen right after the response is
     // sent, which would silently kill an un-awaited email mid-flight. A
-    // failed email still never blocks or fails the response itself — the
+    // failed email still never blocks or fails the response itself, the
     // lead is already safely saved, and the download has already started
     // regardless of what happens here.
     if (email && source && source.startsWith("resources-")) {

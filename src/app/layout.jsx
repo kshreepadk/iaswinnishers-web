@@ -12,7 +12,7 @@ export const metadata = {
     template: "IAS Winnishers - %s",
   },
   description:
-    "IAS Winnishers pairs every UPSC aspirant with a dedicated personal coach — structured GS classes, answer-writing, test series, interview guidance and steady mentoring, from your first day to your winning finish.",
+    "IAS Winnishers pairs every UPSC aspirant with a dedicated personal coach: structured GS classes, answer-writing, test series, interview guidance and steady mentoring, from your first day to your winning finish.",
   openGraph: {
     type: "website",
     locale: "en_IN",
