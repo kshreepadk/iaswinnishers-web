@@ -123,7 +123,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1200px] text-center">
           <span className="eyebrow justify-center">The Founder</span>
           <h2 className="mt-3.5 font-display text-3xl font-semibold md:text-[42px]">
-            Meet the founder
+            Meet the Founder
           </h2>
           <div className="mx-auto mt-10 grid max-w-[1000px] items-start gap-8 rounded-lg2 border border-line bg-white p-7 text-left md:grid-cols-[240px_1fr] md:gap-10 md:p-10">
             <Image
